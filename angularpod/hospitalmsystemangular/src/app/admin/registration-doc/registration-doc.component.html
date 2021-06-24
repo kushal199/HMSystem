@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<title>Insert title here</title>
+</head>
+<body>
+    <h1 style="margin-left:40%">Doctor Registration</h1>
+	<button class="btn btn-danger" (click)="onlogout()">Log Out</button>
+<form class="form-horizontal" #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
+					<input path="doctor_id" type="hidden" name="doctor_id" value="" ngModel/>
+					<div class="form-group">
+						<label class="control-label col-md-3">username</label>
+						<div class="col-md-7">
+							<input path="username" type="text" class="form-control" name="username"
+								value="" ngModel/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">firstname</label>
+						<div class="col-md-7">
+							<input path="firstname" type="text" class="form-control" name="firstname"
+								value="" ngModel/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">lastname</label>
+						<div class="col-md-7">
+							<input path="lastname" type="text" class="form-control" name="lastname"
+								value="" ngModel/>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">
+						<label class="control-label col-md-3">password</label>
+						<div class="col-md-7">
+							<input path="password" type="password" class="form-control" name="password"
+								value="" ngModel/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">dob</label>
+						<div class="col-md-7">
+							<input path="dob" type="date" class="form-control" name="dob"
+								value="" ngModel/>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-md-3">department_id</label>
+						<div class="col-md-7">
+							<input path="department_id" type="number" class="form-control" name="department_id"
+								value="" ngModel/>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-md-3">address</label>
+						<div class="col-md-7">
+							<input path="address" type="address" class="form-control" name="address"
+								value="" ngModel/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">email</label>
+						<div class="col-md-7">
+							<input path="email" type="email" class="form-control" name="email"
+								value="" ngModel/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">active</label>
+						<div class="col-md-7">
+							<input path="active" type="email" class="form-control" name="active"
+								value="" ngModel/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Phone Number</label>
+						<div class="col-md-7">
+							<input path="active" type="text" class="form-control" name="phone"
+								value="" ngModel/>
+						</div>
+					</div>
+					
+					
+					<div class="form-group ">
+						<input type="submit" class="btn btn-primary" value="Register" />
+					</div>
+					
+				</form>
+
+</body>
+</html>

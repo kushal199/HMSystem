@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<button class="btn btn-danger" (click)="onlogout_doctor()">Log Out</button>
+ <form #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
+ <div class="form-group"> 
+						<div class="col-md-3">
+							<input type="text" class="form-control" name="appointment_id"
+								[(ngModel)]="appointment_id" ngModel />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-3">
+							<input type="text" class="form-control" name="doctor_id"
+                            [(ngModel)]="DoctorData.doctor_id" ngModel />
+						</div>
+					</div>
+ 
+  <textarea name="prescription" rows="10" cols="30" ngModel>The cat was playing in the garden.</textarea>
+  <br><br>
+  <input type="submit">
+</form>
+
+</body>
+</html>

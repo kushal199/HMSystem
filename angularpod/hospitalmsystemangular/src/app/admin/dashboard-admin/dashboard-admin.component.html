@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<style >
+a{
+font-weight: bold; 
+background-color: lightgrey; 
+display:inline-block; 
+height:40px; 
+width:40px; 
+text-decoration:none;
+}
+.abc{
+display:flex;
+justify-content:space-around;
+}
+
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<button class="btn btn-danger" (click)="onlogout()">Log Out</button>
+
+<div class="abc">
+<button routerLink="/regpage" class="btn btn-danger"><b>Add Doctor</b></button> 
+<button routerLink="/view_doc" class="btn btn-info"><b>View Doctor</b></button>
+<button routerLink="/view_pat" class="btn btn-primary"><b>View Patients</b></button>
+</div>
+
+</body>
+</html>

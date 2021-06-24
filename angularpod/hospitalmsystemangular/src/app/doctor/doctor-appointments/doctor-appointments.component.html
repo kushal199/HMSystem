@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container text-center" id="tasksDiv">
+	<button class="btn btn-danger" (click)="onlogout_doctor()">Log Out</button>
+			<h3>All Appointments for You</h3>
+				<!-- <h1>Welcome Mr.${patientm.name} </h1> -->
+				<hr>
+				<h1>Upcoming Appointments</h1>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Appointment Id</th>
+								<th>Patient_Id</th>
+								<th>Doctor_Id</th>
+								<th>datetime</th>
+								<th>feedback</th>
+								<th>description</th>
+								<th>Given Prescription</th>
+								<th>Prescription</th>
+
+								
+							</tr>
+						</thead>
+						<tbody>
+							<!-- <c:forEach var="user" items="${users }"> -->
+								<tr *ngFor="let user of users">
+									<td>{{user.appointment_id}}</td>
+									<td>{{user.patient_id}}</td>
+									<td>{{user.doctor_id}}</td>
+									<td>{{user.datetime}}</td>
+								
+									<!-- <!-- <td><button class="btn btn-danger" (click)="getfeedbackform(user.appointment_id)"><span
+											class="glyphicon glyphicon-pencil"></span>feedback</button></td>--!> -->
+									     
+                                    <td>{{user.feedback}}</td>        
+                                    <td>{{user.description}}</td>
+									<!-- <td>{{user.prescription}}</td> -->
+									<td>{{user.prescription}}</td>
+                                    <td><button class="btn btn-danger" (click)="getprescriptionForm(user.appointment_id)"><span
+                                        class="glyphicon glyphicon-pencil"></span>Prescribe</button></td>
+								
+								</tr>
+							<!-- </c:forEach> -->
+						</tbody>
+					</table>
+				</div>
+				<br>
+				<br>
+				<h1>Previous Appointments</h1>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Appointment Id</th>
+								<th>Patient_Id</th>
+								<th>Doctor_Id</th>
+								<th>datetime</th>
+								<th>feedback</th>
+								<th>description</th>
+								<th>Given Prescription</th>
+								<th>Prescription</th>
+
+								
+							</tr>
+						</thead>
+						<tbody>
+							<!-- <c:forEach var="user" items="${users }"> -->
+								<tr *ngFor="let user of prevapp">
+									<td>{{user.appointment_id}}</td>
+									<td>{{user.patient_id}}</td>
+									<td>{{user.doctor_id}}</td>
+									<td>{{user.datetime}}</td>
+								
+									<!-- <!-- <td><button class="btn btn-danger" (click)="getfeedbackform(user.appointment_id)"><span
+											class="glyphicon glyphicon-pencil"></span>feedback</button></td>--!> -->
+									     
+                                    <td>{{user.feedback}}</td>        
+                                    <td>{{user.description}}</td>
+									<!-- <td>{{user.prescription}}</td> -->
+									<td>{{user.prescription}}</td>
+                                    <td><button class="btn btn-danger" (click)="getprescriptionForm(user.appointment_id)"><span
+                                        class="glyphicon glyphicon-pencil"></span>Prescribe</button></td>
+								
+								</tr>
+							<!-- </c:forEach> -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+</body>
+</html>

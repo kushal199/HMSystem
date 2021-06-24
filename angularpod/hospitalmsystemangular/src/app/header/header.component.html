@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:rgb(148, 50, 50);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(77, 66, 66);
+}
+</style>
+</head>
+<body>
+<!-- // *ngIf="isloggedin;else elseBlock" -->
+<ul>
+  <li><a class="active" routerLink="/landing">Landing</a></li>
+  <button *ngIf="isloggedin;else elseBlock"><a class="active"  routerLink="" (click)="onlogout()">Logout</a></button>
+  <ng-template  #elseBlock >
+    <button ><a class="active" >Login</a></button>
+
+  </ng-template>
+
+</ul>
+
+</body>
+</html>

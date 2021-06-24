@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container text-center" id="tasksDiv">
+				<button class="btn btn-info" (click)="onlogout()">logout</button>
+				<br>
+				<button class="btn btn-success" routerLink="/patient_edit">Update Your Details</button>
+				<!-- <h1>Welcome Mr.${patientm.name} </h1> -->
+				<h1>Welcome Mr. {{PatientData.name}}</h1>
+				<br>
+				<button (click)="allappointments(PatientData.patient_id)">See Appointments</button>
+				<br>
+				<button routerLink="/edit_patient" >Edit Yourself</button>
+				<hr>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								
+								<th>Depatment</th>
+						
+							</tr>
+						</thead>
+						<tbody>
+							<!-- <c:forEach var="user" items="${departments }">
+								<tr>
+									<td><a href="/doctorfordep?id=${user.department_id }&idd=${patientm.patient_id}">${user.name}</a></td>
+									
+								</tr> -->
+							<!-- </c:forEach> -->
+                            <tr *ngFor ="let dept  of depts">
+                                <td><button (click)="docsfordept(dept.department_id)">{{dept.name}}</button></td>
+                            </tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+</body>
+</html>
