@@ -1,4 +1,4 @@
-package com.kush.repository;
+package com.hms.repository;
 
 import java.util.List;
 
@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.kush.modal.Appointment;
-//import com.kush.modal.User;
+import com.hms.modal.Appointment;
 
 public interface AppointmentRepository  extends CrudRepository<Appointment, Integer>{
 	

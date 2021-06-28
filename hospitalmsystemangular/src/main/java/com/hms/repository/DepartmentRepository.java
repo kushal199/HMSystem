@@ -1,8 +1,8 @@
-package com.kush.repository;
+package com.hms.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.kush.modal.Department;
+import com.hms.modal.Department;
 
 public interface DepartmentRepository extends CrudRepository<Department, Integer>{
 

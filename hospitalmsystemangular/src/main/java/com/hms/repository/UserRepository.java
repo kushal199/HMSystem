@@ -1,4 +1,4 @@
-package com.kush.repository;
+package com.hms.repository;
 
 
 import org.springframework.data.jpa.repository.Modifying;
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.kush.modal.User;
+import com.hms.modal.User;
 
 import java.sql.Date;
 import java.util.List;

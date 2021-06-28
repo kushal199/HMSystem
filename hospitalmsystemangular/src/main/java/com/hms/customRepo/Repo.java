@@ -1,4 +1,4 @@
-package com.kush.customRepo;
+package com.hms.customRepo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import com.kush.modal.User;
+import com.hms.modal.User;
 
 @Repository
 public class Repo {

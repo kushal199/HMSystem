@@ -1,4 +1,4 @@
-package com.kush.controller;
+package com.hms.controller;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -23,14 +23,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kush.customRepo.Repo;
-import com.kush.modal.Admin;
-import com.kush.modal.Appointment;
-import com.kush.modal.Department;
-import com.kush.modal.Patient;
-import com.kush.modal.User;
-import com.kush.repository.UserRepository;
-import com.kush.services.UserService;
+import com.hms.customRepo.Repo;
+import com.hms.modal.Admin;
+import com.hms.modal.Appointment;
+import com.hms.modal.Department;
+import com.hms.modal.Patient;
+import com.hms.modal.User;
+import com.hms.repository.UserRepository;
+import com.hms.services.UserService;
 
 @RestController
 public class ApplicationController {

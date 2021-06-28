@@ -1,9 +1,9 @@
-package com.kush.repository;
+package com.hms.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.kush.modal.Admin;
-import com.kush.modal.Patient;
+import com.hms.modal.Admin;
+import com.hms.modal.Patient;
 
 public interface AdminRepository extends CrudRepository<Admin, Integer> {
 	

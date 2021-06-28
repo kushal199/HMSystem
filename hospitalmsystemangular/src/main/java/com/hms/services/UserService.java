@@ -1,4 +1,4 @@
-package com.kush.services;
+package com.hms.services;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -9,16 +9,16 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.kush.modal.Admin;
-import com.kush.modal.Appointment;
-import com.kush.modal.Department;
-import com.kush.modal.Patient;
-import com.kush.modal.User;
-import com.kush.repository.AdminRepository;
-import com.kush.repository.AppointmentRepository;
-import com.kush.repository.DepartmentRepository;
-import com.kush.repository.PatientRepository;
-import com.kush.repository.UserRepository;
+import com.hms.modal.Admin;
+import com.hms.modal.Appointment;
+import com.hms.modal.Department;
+import com.hms.modal.Patient;
+import com.hms.modal.User;
+import com.hms.repository.AdminRepository;
+import com.hms.repository.AppointmentRepository;
+import com.hms.repository.DepartmentRepository;
+import com.hms.repository.PatientRepository;
+import com.hms.repository.UserRepository;
 
 @Service
 @Transactional

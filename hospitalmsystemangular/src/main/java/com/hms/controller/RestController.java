@@ -1,11 +1,11 @@
-package com.kush.controller;
+package com.hms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.kush.modal.User;
-import com.kush.services.UserService;
+import com.hms.modal.User;
+import com.hms.services.UserService;
 
 
 @org.springframework.web.bind.annotation.RestController
