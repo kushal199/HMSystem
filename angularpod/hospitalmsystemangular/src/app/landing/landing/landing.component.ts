@@ -13,8 +13,8 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  gotologin(){
-    this.router.navigate(['loginpage']);
-  }
+  // gotologin(){
+  //   this.router.navigate(['loginpage']);
+  // }
 
 }

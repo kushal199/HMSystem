@@ -16,6 +16,8 @@ export class LoginpageComponent implements OnInit {
   constructor(private service:NgserviceService,private router:Router) {
     //localStorage.removeItem('UserData');
     localStorage.removeItem('PatientData');
+    localStorage.removeItem('DoctorData');
+    this.guard();
    }
 
   ngOnInit(): void {
@@ -61,7 +63,12 @@ export class LoginpageComponent implements OnInit {
         });
     // }
   }
-  
+  guard(){
+    const UserData=JSON.parse(localStorage.getItem('UserData')!);
+    if(UserData){
+      this.router.navigate(['dashboard_admin']);
+    }
+  }
  
 
 }

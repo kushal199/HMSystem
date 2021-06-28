@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header',
@@ -7,60 +8,53 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
   isloggedin=false;
   constructor(private router:Router) { 
     this.loginlogout();
-    // location.reload(true);
-
   }
 
   ngOnInit(): void {
+    $(document).ready(function() {
+      $( ".nav-item" ).bind( "click", function(event) {
+          event.preventDefault();
+          var clickedItem = $( this );
+          $( ".nav-item" ).each( function() {
+              $( this ).removeClass( "active" );
+          });
+          clickedItem.addClass( "active" );
+      });
+  });
   }
+
+  public isMenuCollapsed = true;
+
   loginlogout(){
-    console.log("entered");
     const DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);
     const UserData=JSON.parse(localStorage.getItem('UserData')!);
     const PatientData=JSON.parse(localStorage.getItem('PatientData')!);
+
     if(DoctorData){
       this.isloggedin=true;
-      console.log(this.isloggedin);
-      
-      // this.router.navigate(['doctor_dashboard']).then(()=>{
-        
-      //   location.reload();
-      //   location.reload();
-      //   location.reload();
-      //   window.stop();
-        
-      // });
-    }else if(!DoctorData){
+    }
+    else if(!DoctorData){
       this.isloggedin=false;
-      console.log(this.isloggedin);
+     
+
       if(UserData){
         this.isloggedin=true;
-      console.log(this.isloggedin);
       
-      // this.router.navigate(['dashboard_admin']).then(()=>{
-        
-      //   window.location.reload();
-      //   window.stop();
-      // });
-      }else if(!UserData){
+      }
+      else if(!UserData){
         this.isloggedin=false;
-        console.log(this.isloggedin);
+        
         if(PatientData){
           this.isloggedin=true;
-          console.log(this.isloggedin);
           
-          // this.router.navigate(['doctor_dashboard']).then(()=>{
-            
-          //   location.reload();
-          //   window.stop();
-            
-          // });
-        }else if(!PatientData){
+        }
+        else if(!PatientData){
           this.isloggedin=false;
-          console.log(this.isloggedin);
+          
         }
       }
     }

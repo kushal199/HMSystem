@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,4 +34,30 @@ justify-content:space-around;
 </div>
 
 </body>
-</html>
+</html> -->
+<body style="overflow-x: hidden;">
+<h2>Admin Dashboard</h2>
+<div class="card-deck">
+    <div class="card col-md-4" >
+      <img class="card-img-top" src="../../../assets/image/admin.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">you can register new doctor here</h5>
+        <a routerLink="/regpage" class="btn btn-primary">ADD DOCTOR</a>
+      </div>
+    </div>
+    <div class="card col-md-4" >
+      <img class="card-img-top" src="../../../assets/image/doctor.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">you can view all doctor here and can update there information here </h5>
+        <a routerLink="/view_doc" class="btn btn-primary">VIEW DOCTOR / UPDATE</a>
+      </div>
+    </div>
+    <div class="card col-md-4" >
+      <img class="card-img-top" src="../../../assets/image/patient.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">you can view all patient here</h5>
+        <a routerLink="/view_pat" class="btn btn-primary">VIEW PATIENT</a>
+      </div>
+    </div>
+  </div>
+  </body>

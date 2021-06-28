@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,8 @@ import { PatientRegistrationComponent } from './patient/patient-registration/pat
 import { EditPatientComponent } from './patient/edit-patient/edit-patient.component';
 import { ViewPatComponent } from './admin/view-pat/view-pat.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 //import { PatientLoginComponent } from './patient-login/patient-login.component';
 
 @NgModule({
@@ -54,7 +57,8 @@ import { HeaderComponent } from './header/header.component';
     PatientRegistrationComponent,
     EditPatientComponent,
     ViewPatComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
     //PatientLoginComponent
   ],
   imports: [
@@ -62,7 +66,8 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
