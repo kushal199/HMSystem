@@ -1,100 +1,69 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<title>Insert title here</title>
-</head>
-<body>
+
 <h1>Patient Registration</h1>
 <form class="form-horizontal"  #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
-					
+	<div class="container">					
 					<div class="form-group">
-						<label class="control-label col-md-3">username</label>
+						<label class="control-label col-md-3">Username</label>
 						<div class="col-md-7">
-							<input path="username" type="text" class="form-control" name="username"
-								value="" ngModel/>
+							<input path="username" type="text" class="form-control" name="username" placeholder="Enter Email Id as Username" value="" ngModel/>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3">password</label>
+						<label class="control-label col-md-3">Name</label>
 						<div class="col-md-7">
-							<input path="password" type="text" class="form-control" name="password"
-								value="" ngModel/>
+							<input path="name" type="text" class="form-control" name="name" placeholder="Enter Name as per Aadhar Card" value="" ngModel />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3">name</label>
+						<label class="control-label col-md-3">Aadhar Number</label>
 						<div class="col-md-7">
-							<input path="name" type="text" class="form-control" name="name"
-								value="" ngModel />
+							<input path="aadhar" type="aadhar" class="form-control" name="aadhar" placeholder="Enter Aadhar Number" value="" ngModel/>
 						</div>
 					</div>
-					
 					<div class="form-group">
-						<label class="control-label col-md-3">address</label>
+						<label class="control-label col-md-3">Address</label>
 						<div class="col-md-7">
-							<input path="address" type="address" class="form-control" name="address"
-								value="" ngModel/>
+							<input path="address" type="address" class="form-control" name="address" placeholder="Enter Address" value="" ngModel/>
 						</div>
 					</div>
-					
-					
-					
 					<div class="form-group">
-						<label class="control-label col-md-3">dob</label>
+						<label class="control-label col-md-3">Phone Number</label>
+						<div class="col-md-7">
+							<input path="active" type="phone" class="form-control" name="phone" placeholder="Enter Phone Number" value="" ngModel />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Date of Birth</label>
 						<div class="col-md-7">
 							<input path="dob" type="date" class="form-control" name="dob"
 								value="" ngModel/>
 						</div>
 					</div>
-					
 					<div class="form-group">
-						<label class="control-label col-md-3">gender</label>
-						<div class="col-md-7">
-							<input path="gender" type="gender" class="form-control" name="gender"
-								value="" ngModel/>
-						</div>
+						<label class="control-label col-md-3">Gender</label>
+							<input type="radio" name="gender" value="male" ngModel/>
+							<label for="male">Male </label> &nbsp;
+							<input type="radio" name="gender" value="female" ngModel/> 
+							<label for="female">Female </label> &nbsp;
+							<input type="radio" name="gender" value="other" ngModel/>
+							<label for="other">Other</label>
+						
 					</div>
-					
-					
 					<div class="form-group">
-						<label class="control-label col-md-3">aadhar</label>
+						<label class="control-label col-md-3">Pincode</label>
 						<div class="col-md-7">
-							<input path="aadhar" type="aadhar" class="form-control" name="aadhar"
-								value="" ngModel/>
+							<input path="pin" type="pin" class="form-control" name="pin" placeholder="Enter Pincode" value="" ngModel />
 						</div>
 					</div>
-					
 					<div class="form-group">
-						<label class="control-label col-md-3">pin</label>
+						<label class="control-label col-md-3">Password</label>
 						<div class="col-md-7">
-							<input path="pin" type="pin" class="form-control" name="pin"
-								value="" ngModel />
+							<input path="password" type="password" class="form-control" name="password" placeholder="Enter Password" value="" ngModel/>
 						</div>
 					</div>
-					
-					<div class="form-group">
-						<label class="control-label col-md-3">active</label>
-						<div class="col-md-7">
-							<input path="active" type="active" class="form-control" name="active"
-								value="" ngModel />
-						</div>
+					<div class="Login">
+						<button type="submit" class="btn btn-primary" value="Register">Register</button>
+					  </div>
 					</div>
-                    <div class="form-group">
-						<label class="control-label col-md-3">phone</label>
-						<div class="col-md-7">
-							<input path="active" type="phone" class="form-control" name="phone"
-								value="" ngModel />
-						</div>
-					</div>
-					
-					
-					<div class="form-group ">
-						<input type="submit" class="btn btn-primary" value="Register" />
-					</div>
-					
 				</form>
-
-</body>
-</html>

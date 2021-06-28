@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1"><style>
+	th{
+		text-align: center;
+		font-weight: bold;
+	}
+</style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<title>Insert title here</title>
+<title>Appointments for Patient</title>
 </head>
 <body>
 <div class="container text-center" id="tasksDiv">
-	<button class="btn btn-info" (click)="onlogout()">logout</button>
+	<!-- <button class="btn btn-info" (click)="onlogout()">logout</button> -->
 			<h3>All Appointments for You</h3>
 				<!-- <h1>Welcome Mr.${patientm.name} </h1> -->
 				<hr>
@@ -18,12 +23,11 @@
 								<th>Appointment Id</th>
 								<th>Patient_Id</th>
 								<th>Doctor_Id</th>
-								<th>datetime</th>
-								<th>feedback</th>
-								<th>description</th>
+								<th>Datetime</th>
+								<th>Feedback</th>
+								<th>Description</th>
 								<th>Prescription</th>
-								
-							</tr>
+								</tr>
 						</thead>
 						<tbody>
 							<!-- <c:forEach var="user" items="${users }"> -->
@@ -34,7 +38,7 @@
 									<td>{{user.datetime}}</td>
 								
 									<td><button class="btn btn-danger" (click)="getfeedbackform(user.appointment_id)"><span
-											class="glyphicon glyphicon-pencil"></span>feedback</button></td>
+											class="glyphicon glyphicon-pencil"></span>Feedback</button></td>
 									<td>
                                         {{user.description}}</td>
 									<td>{{user.prescription}}</td>
@@ -42,7 +46,7 @@
 									
 									
 						
-									
+			
 								</tr>
 							<!-- </c:forEach> -->
 						</tbody>

@@ -10,7 +10,11 @@ import { NgserviceService } from 'src/app/ngservice.service';
 })
 export class DoctorLoginComponent implements OnInit {
    ex:any;
-  constructor(private service:NgserviceService,private router:Router) { }
+  constructor(private service:NgserviceService,private router:Router) {
+    localStorage.removeItem('UserData');
+    localStorage.removeItem('PatientData');
+    this.guard();
+   }
 
   ngOnInit(): void {
   }
@@ -39,6 +43,12 @@ export class DoctorLoginComponent implements OnInit {
      }
     }
     );
+  }
+  guard(){
+    const DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);
+    if(DoctorData){
+      this.router.navigate(['doctor_dashboard']);
+    }
   }
 
 }

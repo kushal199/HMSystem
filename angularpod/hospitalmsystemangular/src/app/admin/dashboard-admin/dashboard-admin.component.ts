@@ -16,24 +16,14 @@ export class DashboardAdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  //session checking if doctor is logged in or not
   login_session(){
     const userData=JSON.parse(localStorage.getItem('UserData')!);
-    //console.log(userData);
     if(!userData){
-      //return;
       this.router.navigate(['loginpage']);
     }
-    // let loggedinUser =new User();
-    // loggedinUser=userData;
-    // console.log(loggedinUser);
-    // if(loggedinUser.doctor_id!=0){
-    //    this.u=loggedinUser;
-    //    //this.router.navigate(['dashboard_admin']);
-    // }
-  }
-  onlogout(){
-    localStorage.removeItem('UserData');
-    this.router.navigate(['loginpage']);
   }
 
+ 
 }

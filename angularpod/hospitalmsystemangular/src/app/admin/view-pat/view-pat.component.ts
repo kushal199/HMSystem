@@ -12,28 +12,23 @@ export class ViewPatComponent implements OnInit {
   constructor(private router:Router,private service:NgserviceService) {
     this.login_session();
     this.getPatient();
-    
-
    }
+
 
   ngOnInit(): void {
   }
+
 
   getPatient(){
     this.service.fetchPatientdetails().subscribe(data=>{
     this.users=data;
     });
   }
+
+
   onlogout(){
     localStorage.removeItem('UserData');
     this.router.navigate(['loginpage']);
-  }
-
-  deleteuser(id:any){
-
-  }
-  updateuser(id:any){
-    
   }
 
   login_session(){

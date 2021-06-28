@@ -1,37 +1,27 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!DOCTYPE html>
-<html>
-<head>
 
-<meta charset="ISO-8859-1">
-<style >
-a{
-font-weight: bold; 
-background-color: lightgrey; 
-display:inline-block; 
-height:40px; 
-width:40px; 
-text-decoration:none;
-}
-.abc{
-display:flex;
-justify-content:space-around;
-}
-
-</style>
-<title>Insert title here</title>
-</head>
-<body>
-<br>
-<br>
-<br>
-<button class="btn btn-danger" (click)="onlogout()">Log Out</button>
-
-<div class="abc">
-<button routerLink="/regpage" class="btn btn-danger"><b>Add Doctor</b></button> 
-<button routerLink="/view_doc" class="btn btn-info"><b>View Doctor</b></button>
-<button routerLink="/view_pat" class="btn btn-primary"><b>View Patients</b></button>
-</div>
-
-</body>
-</html>
+<body style="overflow-x: hidden;">
+<h2>Admin Dashboard</h2>
+<div class="card-deck">
+    <div class="card col-md-4" >
+      <img class="card-img-top" src="../../../assets/image/admin.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">you can register new doctor here</h5>
+        <a routerLink="/regpage" class="btn btn-primary">ADD DOCTOR</a>
+      </div>
+    </div>
+    <div class="card col-md-4" >
+      <img class="card-img-top" src="../../../assets/image/doctor.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">you can view all doctor here and can update there information here </h5>
+        <a routerLink="/view_doc" class="btn btn-primary">VIEW DOCTOR / UPDATE</a>
+      </div>
+    </div>
+    <div class="card col-md-4" >
+      <img class="card-img-top" src="../../../assets/image/patient.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">you can view all patient here</h5>
+        <a routerLink="/view_pat" class="btn btn-primary">VIEW PATIENT</a>
+      </div>
+    </div>
+  </div>
+  </body>

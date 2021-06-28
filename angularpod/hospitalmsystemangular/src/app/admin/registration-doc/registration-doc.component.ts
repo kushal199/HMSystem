@@ -10,14 +10,18 @@ import { User } from 'src/app/user';
 })
 export class RegistrationDocComponent implements OnInit {
   ex: any;
+  //creating a object
   u:User=new User();
 
   constructor(private service:NgserviceService,private router:Router) {
     this.login_session();
    }
 
+
   ngOnInit(): void {
   }
+
+  //submitting registration form 
   submit(value:any){
     console.log(value);
     this.save(value);
@@ -26,31 +30,23 @@ export class RegistrationDocComponent implements OnInit {
        window.location.reload();
     });
   }
+
+  //method taking a object as input to registration and getting a output 1 if data has inserted in database successfully
   save(value:any){
     this.service.doctor_reg(value).subscribe(data=>{
       this.ex=data;
       console.log(this.ex);
     });
   }
-  onlogout(){
-    localStorage.removeItem('UserData');
-    this.router.navigate(['loginpage']);
-  }
 
+
+//checking if the session is available or not
   login_session(){
     const userData=JSON.parse(localStorage.getItem('UserData')!);
-    //console.log(userData);
     if(!userData){
-      //return;
       this.router.navigate(['loginpage']);
     }
-    let loggedinUser =new User();
-    loggedinUser=userData;
-    console.log(loggedinUser);
-    if(loggedinUser.doctor_id!=0){
-       this.u=loggedinUser;
-       //this.router.navigate(['dashboard_admin']);
-    }
+   
   }
 
 }

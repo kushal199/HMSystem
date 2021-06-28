@@ -12,7 +12,8 @@ export class PatientloginComponent implements OnInit {
 
   constructor(private service:NgserviceService,private router:Router) {
     localStorage.removeItem('UserData');
-    //localStorage.removeItem('PatientData');
+    localStorage.removeItem('DoctorData');
+    this.guard();
    }
 
   ngOnInit(): void {
@@ -43,5 +44,11 @@ login_patient(value:any){
        });
     }
   });
+}
+guard(){
+  const PatientData=JSON.parse(localStorage.getItem('PatientData')!);
+  if(PatientData){
+    this.router.navigate(['departments']);
+  }
 }
 }

@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<title>Insert title here</title>
-</head>
-<body>
+
 <div class="container text-center">
-	<button class="btn btn-danger" (click)="onlogout_patient()">Log Out</button>
-				<h3>Update Yourself</h3>
-				<hr>
+				<h1>Update Your Personal Details</h1>
+				<br>
 				<form class="form-horizontal" #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
                     <div class="form-group">
 						<!-- <label class="control-label col-md-3">Username</label> -->
@@ -27,63 +20,46 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3">First Name</label>
+						<label class="control-label col-md-3">Name</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="name"
 							[(ngModel)]="user.name" ngModel/>
 						</div>
 					</div>
-					
 					<div class="form-group">
-						<label class="control-label col-md-3">password</label>
+						<label class="control-label col-md-3">Address</label>
 						<div class="col-md-3">
-							<input type="text" class="form-control" name="password"
-							[(ngModel)]="user.password" ngModel/>
+							<input type="text" class="form-control" name="address"
+							[(ngModel)]="user.address" ngModel/>
 						</div>
 					</div>
-					
 					<div class="form-group">
-						<label class="control-label col-md-3">dob</label>
+						<label class="control-label col-md-3">Phone Number</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="phone"
+							[(ngModel)]="user.phone" ngModel />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Date of Birth</label>
 						<div class="col-md-7">
 							<input type="date" class="form-control" name="dob"
 							[(ngModel)]="user.dob" ngModel/>
 						</div>
 					</div>
-
-                    <div class="form-group">
+					<div class="form-group">
 						<label class="control-label col-md-3">Gender</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="gender"
 							[(ngModel)]="user.gender" ngModel/>
 						</div>
 					</div>
-                    <div class="form-group">
-						<label class="control-label col-md-3">Aadhar Id</label>
-						<div class="col-md-7">
-							<input type="number" class="form-control" name="aadhar"
-							[(ngModel)]="user.aadhar" ngModel/>
-						</div>
-					</div>
+                    
 					<div class="form-group">
 						<label class="control-label col-md-3">Pin</label>
 						<div class="col-md-7">
 							<input type="number" class="form-control" name="pin"
 							[(ngModel)]="user.pin" ngModel/>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">address</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" name="address"
-							[(ngModel)]="user.address" ngModel/>
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<label class="control-label col-md-3">phone</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="phone"
-							[(ngModel)]="user.phone" ngModel />
 						</div>
 					</div>
 					<div class="form-group">
@@ -93,14 +69,16 @@
 							[(ngModel)]="user.active" ngModel/>
 						</div>
 					</div>
-					
-					
-					
-					<div class="form-group ">
-						<input type="submit" class="btn btn-primary" value="Update" />
+					<div class="form-group">
+						<label class="control-label col-md-3">Password</label>
+						<div class="col-md-3">
+							<input type="text" class="form-control" name="password"
+							[(ngModel)]="user.password" ngModel/>
+						</div>
 					</div>
+					<div class="Login">
+						<button type="submit" class="btn btn-primary" value="Update">Update</button>
+					  </div>
 				</form>
 			</div>
-
-</body>
-</html>
+			
