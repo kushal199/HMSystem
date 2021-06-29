@@ -94,6 +94,8 @@ public class DoctorService {
 	// for doc prescription
 	public void updatePrescription(String prescription, int appointmentId) {
 		appointmentRepository.updateprescription(prescription, appointmentId);
-
+	}
+	public String checkUniqueUsername(String username) {
+		return (doctorRepository.getDoctorCount(username)==0)?"yes":"no";
 	}
 }

@@ -91,4 +91,8 @@ public class AdminController {
 		return patientService.showAllPatient();
 	}
 
+	@PostMapping("admin/check_doc_username")
+	public String checkDoctorUniqueUsername(@RequestBody String username) {
+		return doctorService.checkUniqueUsername(username);
+	}
 }

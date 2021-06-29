@@ -111,4 +111,14 @@ public class PatientController {
 
 		return 1;
 	}
+	//uniqueness check
+	@PostMapping("/patient/check_username")
+	public String checkUniqueUsername(@RequestBody String username) {
+		return patientService.checkUniqueUsername(username);
+	}
+	@PostMapping("/patient/check_aadhaar")
+	public String checkUniqueAadhaar(@RequestBody String aadhaar) {
+		return patientService.checkUniqueAadhaar(aadhaar);
+	}
+	
 }

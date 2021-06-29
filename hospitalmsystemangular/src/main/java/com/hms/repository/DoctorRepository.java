@@ -24,6 +24,9 @@ public interface DoctorRepository extends CrudRepository<Doctor,Integer> {
 
 	//public User findOne(int id);
 	
+	@Query(value = "SELECT COUNT(doctor_id) FROM doctor WHERE username=:username", nativeQuery = true)
+	public int getDoctorCount(@Param("username") String username);
+	
 	@Modifying
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	@Query(value="update doctor set username=:username ,firstname=:firstname , lastname=:lastname,password=:password,dob=:dob,department_id=:departmentId,address=:address,email=:email,active=:active where doctor_id=:doctorId" ,nativeQuery=true)
