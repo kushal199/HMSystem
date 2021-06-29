@@ -58,7 +58,7 @@ public class PatientController {
 
 	// used for update the patient
 
-	@PutMapping("/update_patient")
+	@PostMapping("/update_patient")
 	public int updatePatient(@RequestBody Patient patient) {
 		System.out.println(patient);
 		patientService.updatepatient(patient);

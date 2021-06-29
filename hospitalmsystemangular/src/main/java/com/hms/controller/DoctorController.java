@@ -62,7 +62,7 @@ public class DoctorController {
 	}
 	// used to prescribe from doctor
 
-	@PutMapping("/update_prescription")
+	@PostMapping("/update_prescription")
 	public int prescriptionPush(@RequestBody Appointment appointment) {
 		doctorService.updatePrescription(appointment.getPrescription(), appointment.getAppointmentId());
 		return 1;

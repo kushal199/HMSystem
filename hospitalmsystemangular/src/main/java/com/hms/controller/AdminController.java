@@ -59,7 +59,7 @@ public class AdminController {
 	}
 	// used for updating the doctor
 	//must handle exception
-	@PutMapping("/update")
+	@PostMapping("/update")
 	public int register1(@RequestBody Doctor doctor) {
 		doctorService.update(doctor);
 		return 1;
@@ -67,7 +67,7 @@ public class AdminController {
 
 	// used for delete the doctor
 	//must handle exception
-	@DeleteMapping("/delete-user")
+	@PostMapping("/delete-user")
 	public int deleteUser(@RequestBody int id) {
 		doctorService.deleteMyUser(id);
 
