@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +14,6 @@ import com.hms.entity.Appointment;
 import com.hms.entity.Department;
 import com.hms.entity.Doctor;
 import com.hms.entity.Patient;
-import com.hms.repository.AppointmentRepository;
-import com.hms.repository.DepartmentRepository;
 import com.hms.services.AppointmentService;
 import com.hms.services.DepartmentService;
 import com.hms.services.DoctorService;
@@ -90,8 +87,8 @@ public class PatientController {
 	@PostMapping("/save_appointment")
 	public int appointmentSave(@RequestBody Appointment appointment) {
 
-		Appointment appointment1 = new Appointment(appointment.getAppointmentId(), appointment.getPatientId(),
-				appointment.getDoctorId(), appointment.getDateTime(), "", appointment.getDescription(), "");
+		Appointment appointment1 = new Appointment(appointment.getAppointment_id(), appointment.getPatient_id(),
+				appointment.getDoctor_id(), appointment.getDatetime(), "", appointment.getDescription(), "");
 		appointmentService.saveAppointment(appointment1);
 		return 1;
 
@@ -110,7 +107,7 @@ public class PatientController {
 	@PostMapping("/update_feedback")
 	public int feedbackPush(@RequestBody Appointment appointment) {
 
-		appointmentService.updateFeedback(appointment.getFeedback(), appointment.getPatientId());
+		appointmentService.updateFeedback(appointment.getFeedback(), appointment.getPatient_id());
 
 		return 1;
 	}

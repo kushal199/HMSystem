@@ -2,7 +2,6 @@ package com.hms.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,10 +47,10 @@ public class DoctorService {
 	}
 
 	public void update(Doctor doctor) {
-		doctorRepository.update(doctor.getUsername(),doctor.getFirstName(),
-				doctor.getLastName(), doctor.getPassword(),
-				doctor.getDob(),doctor.getDepartmentId(),doctor.getAddress(),
-				doctor.getEmail(),doctor.getActive(),doctor.getDoctorId());
+		doctorRepository.update(doctor.getUsername(),doctor.getFirstname(),
+				doctor.getLastname(), doctor.getPassword(),
+				doctor.getDob(),doctor.getDepartment_id(),doctor.getAddress(),
+				doctor.getEmail(),doctor.getActive(),doctor.getDoctor_id());
 	}
 
 	public void deleteMyUser(int id) {

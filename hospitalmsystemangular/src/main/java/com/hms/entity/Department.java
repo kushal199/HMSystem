@@ -3,6 +3,7 @@ package com.hms.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,9 +12,9 @@ import javax.persistence.Table;
 public class Department {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="department_id")
-	private int departmentId;
+	private int department_id;
 	@Column(name="name")
 	private String name;
 	@Column(name="description")
@@ -21,17 +22,17 @@ public class Department {
 	public Department() {
 		
 	}
-	public Department(int departmentId, String name, String description) {
+	public Department(int department_id, String name, String description) {
 		super();
-		this.departmentId = departmentId;
+		this.department_id = department_id;
 		this.name = name;
 		this.description = description;
 	}
-	public int getDepartmentId() {
-		return departmentId;
+	public int getDepartment_id() {
+		return department_id;
 	}
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
+	public void setDepartment_id(int department_id) {
+		this.department_id = department_id;
 	}
 	public String getName() {
 		return name;
@@ -47,7 +48,7 @@ public class Department {
 	}
 	@Override
 	public String toString() {
-		return "Department [departmentId=" + departmentId + ", name=" + name + ", description=" + description + "]";
+		return "Department [department_id=" + department_id + ", name=" + name + ", description=" + description + "]";
 	}
 
 }

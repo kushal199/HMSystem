@@ -1,7 +1,5 @@
 package com.hms.services;
 
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,14 +15,13 @@ public class PatientService {
 	@Autowired
 	private PatientRepository patientRepository;
 	
-	@Autowired
-	private DoctorService doctorService;
 	
 
 	public Patient login(Patient p) {
-		return patientRepository.findById(p.getPatientId()).orElse(null);
+		return patientRepository.findById(p.getPatient_id()).orElse(null);
 	}
 	public void savePatient(Patient patient) {
+		patient.setActive("yes");
 		patientRepository.save(patient);
 		
 	}
@@ -40,7 +37,7 @@ public class PatientService {
 	
 	public  void updatepatient(Patient patient) {
 		  patientRepository.update(patient.getUsername(), patient.getName(), patient.getPassword(),
-					patient.getPatientId(), patient.getDob(), patient.getGender(), patient.getAddress(),
+					patient.getPatient_id(), patient.getDob(), patient.getGender(), patient.getAddress(),
 					patient.getAadhaar(), patient.getActive(), patient.getPin(), patient.getPhone());
 	}
 	public List<Patient> showAllPatient(){

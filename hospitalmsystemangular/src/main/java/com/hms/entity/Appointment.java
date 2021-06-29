@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,15 +13,14 @@ import javax.persistence.Table;
 @Table(name="appointment")
 public class Appointment {
 	@Id
-	@GeneratedValue
-	@Column(name="appointment_id")
-	private int appointmentId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int appointment_id;
 	@Column(name="patient_id")
-	private int patientId;
+	private int patient_id;
 	@Column(name="doctor_id")
-	private int doctorId;
+	private int doctor_id;
 	@Column(name="datetime")
-	private Date dateTime;
+	private Date datetime;
 	@Column(name="feedback")
 	private String feedback;
 	@Column(name="description")
@@ -33,48 +33,48 @@ public class Appointment {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Appointment(int appointmentId, int patientId, int doctorId, Date dateTime, String feedback,
+	public Appointment(int appointment_id, int patient_id, int doctor_id, Date datetime, String feedback,
 			String description, String prescription) {
 		super();
-		this.appointmentId = appointmentId;
-		this.patientId = patientId;
-		this.doctorId = doctorId;
-		this.dateTime = dateTime;
+		this.appointment_id = appointment_id;
+		this.patient_id = patient_id;
+		this.doctor_id = doctor_id;
+		this.datetime = datetime;
 		this.feedback = feedback;
 		this.description = description;
 		this.prescription = prescription;
 	}
 
-	public int getAppointmentId() {
-		return appointmentId;
+	public int getAppointment_id() {
+		return appointment_id;
 	}
 
-	public void setAppointmentId(int appointmentId) {
-		this.appointmentId = appointmentId;
+	public void setAppointment_id(int appointment_id) {
+		this.appointment_id = appointment_id;
 	}
 
-	public int getPatientId() {
-		return patientId;
+	public int getPatient_id() {
+		return patient_id;
 	}
 
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
+	public void setPatient_id(int patient_id) {
+		this.patient_id = patient_id;
 	}
 
-	public int getDoctorId() {
-		return doctorId;
+	public int getDoctor_id() {
+		return doctor_id;
 	}
 
-	public void setDoctorId(int doctorId) {
-		this.doctorId = doctorId;
+	public void setDoctor_id(int doctor_id) {
+		this.doctor_id = doctor_id;
 	}
 
-	public Date getDateTime() {
-		return dateTime;
+	public Date getDatetime() {
+		return datetime;
 	}
 
-	public void setDateTime(Date dateTime) {
-		this.dateTime = dateTime;
+	public void setDatetime(Date datetime) {
+		this.datetime = datetime;
 	}
 
 	public String getFeedback() {
@@ -103,10 +103,10 @@ public class Appointment {
 
 	@Override
 	public String toString() {
-		return "Appointment [appointmentId=" + appointmentId + ", patientId=" + patientId + ", doctorId=" + doctorId
-				+ ", dateTime=" + dateTime + ", feedback=" + feedback + ", description=" + description
+		return "Appointment [appointment_id=" + appointment_id + ", patient_id=" + patient_id + ", doctor_id="
+				+ doctor_id + ", datetime=" + datetime + ", feedback=" + feedback + ", description=" + description
 				+ ", prescription=" + prescription + "]";
 	}
-	
+
 
 }

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hms</groupId>
-	<artifactId>cts</artifactId>
+	<artifactId>Hospitalmsystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>HMS</name>
+	<name>Hospitalmsystem</name>
 	<description>Cognizant POD2 Hospital Management Syetem</description>
 	<properties>
 		<java.version>1.8</java.version>

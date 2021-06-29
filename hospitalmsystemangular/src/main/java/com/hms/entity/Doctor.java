@@ -14,20 +14,19 @@ import javax.persistence.Table;
 public class Doctor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="doctor_id")
-	private int doctorId;
+	private int doctor_id;
 	@Column(name="username")
 	private String username;
 	@Column(name="firstname")
-	private String firstName;
+	private String firstname;
 	@Column(name = "lastname")
-	private String lastName;
+	private String lastname;
 	@Column(name="password")
 	private String password;
 	@Column(name="dob")
 	private Date dob;
 	@Column(name="department_id")
-	private int departmentId;
+	private int department_id;
 	@Column(name="address")
 	private String address;
 	@Column(name="email")
@@ -44,16 +43,16 @@ public class Doctor {
 	}
 
 
-	public Doctor(int doctorId, String username, String firstName, String lastName, String password, Date dob,
-			int departmentId, String address, String email, String active, String phone) {
+	public Doctor(int doctor_id, String username, String firstname, String lastname, String password, Date dob,
+			int department_id, String address, String email, String active, String phone) {
 		super();
-		this.doctorId = doctorId;
+		this.doctor_id = doctor_id;
 		this.username = username;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.password = password;
 		this.dob = dob;
-		this.departmentId = departmentId;
+		this.department_id = department_id;
 		this.address = address;
 		this.email = email;
 		this.active = active;
@@ -61,13 +60,13 @@ public class Doctor {
 	}
 
 
-	public int getDoctorId() {
-		return doctorId;
+	public int getDoctor_id() {
+		return doctor_id;
 	}
 
 
-	public void setDoctorId(int doctorId) {
-		this.doctorId = doctorId;
+	public void setDoctor_id(int doctor_id) {
+		this.doctor_id = doctor_id;
 	}
 
 
@@ -81,23 +80,23 @@ public class Doctor {
 	}
 
 
-	public String getFirstName() {
-		return firstName;
+	public String getFirstname() {
+		return firstname;
 	}
 
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
 
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
 
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 
@@ -121,13 +120,13 @@ public class Doctor {
 	}
 
 
-	public int getDepartmentId() {
-		return departmentId;
+	public int getDepartment_id() {
+		return department_id;
 	}
 
 
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
+	public void setDepartment_id(int department_id) {
+		this.department_id = department_id;
 	}
 
 
@@ -173,11 +172,10 @@ public class Doctor {
 
 	@Override
 	public String toString() {
-		return "Doctor [doctorId=" + doctorId + ", username=" + username + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", password=" + password + ", dob=" + dob + ", departmentId=" + departmentId + ", address="
-				+ address + ", email=" + email + ", active=" + active + ", phone=" + phone + "]";
+		return "Doctor [doctor_id=" + doctor_id + ", username=" + username + ", firstname=" + firstname + ", lastname="
+				+ lastname + ", password=" + password + ", dob=" + dob + ", department_id=" + department_id
+				+ ", address=" + address + ", email=" + email + ", active=" + active + ", phone=" + phone + "]";
 	}
-	
 
 	
 }

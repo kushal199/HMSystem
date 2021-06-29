@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -64,7 +63,7 @@ public class DoctorController {
 
 	@PostMapping("/update_prescription")
 	public int prescriptionPush(@RequestBody Appointment appointment) {
-		doctorService.updatePrescription(appointment.getPrescription(), appointment.getAppointmentId());
+		doctorService.updatePrescription(appointment.getPrescription(), appointment.getAppointment_id());
 		return 1;
 	}
 }

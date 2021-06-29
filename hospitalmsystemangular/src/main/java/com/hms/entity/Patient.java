@@ -5,6 +5,7 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,9 +13,9 @@ import javax.persistence.Table;
 @Table(name="patient")
 public class Patient {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="patient_id")
-	private int patientId;
+	private int patient_id;
 	@Column(name="username")
 	private String username;
 	@Column(name="password")
@@ -40,10 +41,10 @@ public class Patient {
 		
 	}
 
-	public Patient(int patientId, String username, String password, String name, String address, Date dob,
+	public Patient(int patient_id, String username, String password, String name, String address, Date dob,
 			String gender, String aadhaar, int pin, String active, String phone) {
 		super();
-		this.patientId = patientId;
+		this.patient_id = patient_id;
 		this.username = username;
 		this.password = password;
 		this.name = name;
@@ -56,12 +57,12 @@ public class Patient {
 		this.phone = phone;
 	}
 
-	public int getPatientId() {
-		return patientId;
+	public int getPatient_id() {
+		return patient_id;
 	}
 
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
+	public void setPatient_id(int patient_id) {
+		this.patient_id = patient_id;
 	}
 
 	public String getUsername() {
@@ -146,12 +147,9 @@ public class Patient {
 
 	@Override
 	public String toString() {
-		return "Patient [patientId=" + patientId + ", username=" + username + ", password=" + password + ", name="
+		return "Patient [patient_id=" + patient_id + ", username=" + username + ", password=" + password + ", name="
 				+ name + ", address=" + address + ", dob=" + dob + ", gender=" + gender + ", aadhaar=" + aadhaar
 				+ ", pin=" + pin + ", active=" + active + ", phone=" + phone + "]";
 	}
-
-	
-	
 
 }
