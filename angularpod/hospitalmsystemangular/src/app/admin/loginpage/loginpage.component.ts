@@ -9,59 +9,54 @@ import { User } from 'src/app/user';
   styleUrls: ['./loginpage.component.css']
 })
 export class LoginpageComponent implements OnInit {
-  // ex:User=new User();
   ex:any;
-  // u:User=new User();
 
   constructor(private service:NgserviceService,private router:Router) {
-    //localStorage.removeItem('UserData');
+
+    //removing other sessions if available
     localStorage.removeItem('PatientData');
+    localStorage.removeItem('DoctorData');
+    this.guard();
    }
 
   ngOnInit(): void {
   }
+
+
+  //after clicking login button submitting form
   submit(value:any){
     console.log(value);
     this.login_admn(value);
-    //this.router.navigate(['loginpage']);
   }
 
+
+  //checking credentials of admin to go forward .If credentials are right it will go to dashboard else a popup
+  //will come of inavalid credentials
   login_admn(value:any){
     this.service.login_admin(value).subscribe(data =>{
       this.ex=data;
-      
-      
       console.log(this.ex);
       if(this.ex.user_id==0){
         alert("invalid username and password");
         this.router.navigate(['loginpage']);
       }else{
         localStorage.setItem('UserData',JSON.stringify(this.ex));
-        this.login_session();
-        //const userData=JSON.parse(localStorage.getItem('UserData')!);
-        //console.log(userData);
-       
-        // this.router.navigate(['dashboard_admin']);
+         this.router.navigate(['dashboard_admin']).then(()=>{
+          window.location.reload();
+         });
       }
     });
   }
-  login_session(){
-    const userData=JSON.parse(localStorage.getItem('UserData')!);
-    //console.log(userData);
-    if(!userData){
-      return;
-    }
-    // let loggedinUser =new User();
-    // loggedinUser=userData;
-    // console.log(loggedinUser);
-    // if(loggedinUser.doctor_id!=0){
-    //    this.u=loggedinUser;
-        this.router.navigate(['dashboard_admin']).then(()=>{
-          window.location.reload();
-        });
-    // }
-  }
   
+  
+  //a session guard so that if admin is logged in state and he/she goes to login page it should
+  //redirect to the dashboard because he is already logged in
+  guard(){
+    const UserData=JSON.parse(localStorage.getItem('UserData')!);
+    if(UserData){
+      this.router.navigate(['dashboard_admin']);
+    }
+  }
  
 
 }

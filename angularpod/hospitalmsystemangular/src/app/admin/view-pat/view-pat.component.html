@@ -1,20 +1,5 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<style>
-    table.table-bordered{
-    border:1px solid red;
-    margin-top:20px;
-  }
-  table.table-bordered > thead > tr > th{
-    border:1px solid red;
-}
-table.table-bordered > tbody > tr > td{
-    border:1px solid red;
-}
-</style>
-<div class="container text-center" id="tasksDiv">
-    <h3>All Patients</h3>
-    <button class="btn btn-danger" (click)="onlogout()">Log Out</button>
-    <hr>
+<div class="container-fluid text-center" id="tasksDiv">
+    <h3 style="margin-top: 3%;">All Patients List</h3>
     <div class="table-responsive">
         <table class="table table-striped table-bordered">
             <thead>
@@ -23,7 +8,7 @@ table.table-bordered > tbody > tr > td{
                     <th>Patient_Id</th>
                     <th>UserName</th>
                     <th>Name</th>
-                    <th>Password</th>
+                    <!-- <th>Password</th> -->
                     <th>Dob</th>
                     <th>Gender</th>
                     <th>address</th>
@@ -41,8 +26,7 @@ table.table-bordered > tbody > tr > td{
                         <td>{{user.patient_id}}</td>
                         <td>{{user.username}}</td>
                         <td>{{user.name}}</td>
-                    
-                        <td>{{user.password}}</td>
+                        <!-- <td>{{user.password}}</td> -->
                         <td>{{user.dob}}</td>
                         <td>{{user.gender}}</td>
                         <td>{{user.address}}</td>
@@ -50,15 +34,6 @@ table.table-bordered > tbody > tr > td{
                         <td>{{user.pin}}</td>
                         <td>{{user.active}}</td>
                         <td>{{user.phone}}</td>
-                        
-                        
-                        
-                        <!-- <td><button class="btn btn-danger" (click) = "deleteuser(user.patient_id)"><span
-                                class="glyphicon glyphicon-trash"></span>Delete</button></td>
-                        <td><button class="btn btn-success" (click) = "updateuser(user.patient_id)"><span
-                                class="glyphicon glyphicon-pencil"></span>Edit</button></td> -->
-                    <!-- <button (click) = "updateEmployee()" class = "btn btn-info"> Update</button> -->
-                    <form action=""></form>
                     </tr>
                
             </tbody>

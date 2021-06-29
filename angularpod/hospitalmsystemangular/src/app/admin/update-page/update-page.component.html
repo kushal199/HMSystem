@@ -1,98 +1,90 @@
-<!-- <p>fgf</p> -->
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<title>Insert title here</title>
-</head>
+
 <body>
-<div class="container text-center">
-	<button class="btn btn-danger" (click)="onlogout()">Log Out</button>
-				<h3>Update User</h3>
-				<hr>
-				<form class="form-horizontal" #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
+	<h3 style="text-align: center; margin-top: 3%;">Update User</h3><br>
+	<div class="container">
+		<form #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
+			<div class="container">
 				<div class="form-group">
-						<label class="control-label col-md-3">id</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" name="doctor_id"
-								[(ngModel)]="user.doctor_id" ngModel/>
-						</div>
+					<label class="control-label col-md-3">ID</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="doctor_id"
+							[(ngModel)]="user.doctor_id" ngModel/>
 					</div>
-					
-					<div class="form-group">
-						<label class="control-label col-md-3">Username</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="username"
-							[(ngModel)]="user.username" ngModel/>
-						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-md-3">USER NAME</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="username"
+						[(ngModel)]="user.username" ngModel/>
 					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">First Name</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="firstname"
-							[(ngModel)]="user.firstname" ngModel/>
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">FIRST NAME</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="firstname"
+						[(ngModel)]="user.firstname" ngModel/>
 					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Last Name</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="lastname"
-							[(ngModel)]="user.lastname" ngModel/>
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">LAST NAME</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="lastname"
+						[(ngModel)]="user.lastname" ngModel/>
 					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">password</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" name="password"
-							[(ngModel)]="user.password" ngModel/>
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">PASSWORD</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="password"
+						[(ngModel)]="user.password" ngModel/>
 					</div>
-					
-					<div class="form-group">
-						<label class="control-label col-md-3">dob</label>
-						<div class="col-md-7">
-							<input type="date" class="form-control" name="dob"
-							[(ngModel)]="user.dob" ngModel/>
-						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-md-3">DATE OF BIRTH</label>
+					<div class="col-md-12">
+						<input type="date" class="form-control" name="dob"
+						[(ngModel)]="user.dob" ngModel/>
 					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Department_id</label>
-						<div class="col-md-7">
-							<input type="number" class="form-control" name="department_id"
-							[(ngModel)]="user.department_id" ngModel/>
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">DEPARTMENT ID</label>
+					<div class="col-md-12">
+						<input type="number" class="form-control" name="department_id"
+						[(ngModel)]="user.department_id" ngModel/>
 					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">address</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" name="address"
-							[(ngModel)]="user.address" ngModel/>
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">ADRESS</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="address"
+						[(ngModel)]="user.address" ngModel/>
 					</div>
-					
-					<div class="form-group">
-						<label class="control-label col-md-3">Email</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
-							[(ngModel)]="user.email" ngModel />
-						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-md-3">EMAIL</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="email"
+						[(ngModel)]="user.email" ngModel />
 					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Active</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="active"
-							[(ngModel)]="user.active" ngModel/>
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">ACTIVE</label>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="active"
+						[(ngModel)]="user.active" ngModel/>
 					</div>
-					
-					
-					
-					<div class="form-group ">
-						<input type="submit" class="btn btn-primary" value="Update" />
-					</div>
-				</form>
+				</div>
+				
+				
+				
+				<div class="form-group ">
+					<input type="submit" class="btn" value="Update" />
+				</div>
 			</div>
+		</form>
+	</div>
 
 </body>
-</html>

@@ -8,14 +8,14 @@
 </head>
 <body>
 <div class="container text-center">
-	<button class="btn btn-danger" (click)="onlogout_doctor()">Log Out</button>
-				<h3>Update User</h3>
+	<!-- <button class="btn btn-danger" (click)="onlogout_doctor()">Log Out</button> -->
+				<!-- <h3>Update User</h3> -->
 				<hr>
 				<form class="form-horizontal" #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
 				<div class="form-group">
-						<label class="control-label col-md-3">id</label>
+						<label class="control-label col-md-3">Id</label>
 						<div class="col-md-3">
-							<input type="text" class="form-control" name="doctor_id"
+							<input type="text" class="form-control" name="doctor_id" placeholder="Enter Id"
 								[(ngModel)]="user.doctor_id" ngModel/>
 						</div>
 					</div>
@@ -23,71 +23,69 @@
 					<div class="form-group">
 						<label class="control-label col-md-3">Username</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="username"
+							<input type="text" class="form-control" name="username" placeholder="Enter User Name"
 							[(ngModel)]="user.username" ngModel/>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">First Name</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="firstname"
+							<input type="text" class="form-control" name="firstname" placeholder="Enter First Name"
 							[(ngModel)]="user.firstname" ngModel/>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Last Name</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="lastname"
+							<input type="text" class="form-control" name="lastname" placeholder="Enter Last Name"
 							[(ngModel)]="user.lastname" ngModel/>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3">password</label>
+						<label class="control-label col-md-3">Password</label>
 						<div class="col-md-3">
-							<input type="text" class="form-control" name="password"
+							<input type="text" class="form-control" name="password" placeholder="Enter Password"
 							[(ngModel)]="user.password" ngModel/>
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label class="control-label col-md-3">dob</label>
+						<label class="control-label col-md-3">Date Of Birth</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="dob"
+							<input type="text" class="form-control" name="dob" placeholder="yyyy-mm-dd" 
 							[(ngModel)]="user.dob" ngModel/>
+							
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Department_id</label>
 						<div class="col-md-7">
-							<input type="number" class="form-control" name="department_id"
+							<input type="number" class="form-control" name="department_id" placeholder="Enter DepartmentId"
 							[(ngModel)]="user.department_id" ngModel/>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3">address</label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" name="address"
+						<label class="control-label col-md-3">Address</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="address" placeholder="Enter Address"
 							[(ngModel)]="user.address" ngModel/>
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label class="control-label col-md-3">Email</label>
+						<label class="control-label col-md-3">EmailId</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
+							<input type="text" class="form-control" name="email" placeholder="Enter EmailId"
 							[(ngModel)]="user.email" ngModel />
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Active</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="active"
+							<input type="text" class="form-control" name="active" placeholder="Yes/No"
 							[(ngModel)]="user.active" ngModel/>
 						</div>
 					</div>
-					
-					
-					
 					<div class="form-group ">
 						<input type="submit" class="btn btn-primary" value="Update" />
 					</div>

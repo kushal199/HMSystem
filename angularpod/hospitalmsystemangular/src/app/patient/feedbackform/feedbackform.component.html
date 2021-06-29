@@ -2,27 +2,32 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Feedback</title>
 </head>
 <body>
-	<button class="btn btn-info" (click)="onlogout()">logout</button>
+	<!-- <button class="btn btn-info" (click)="onlogout()">logout</button> -->
  <form #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
  <div class="form-group"> 
 						<div class="col-md-3">
+							<label for="appointment_id"><b>Appointment Id</b></label>
 							<input type="text" class="form-control" name="appointment_id"
 								[(ngModel)]="appointment_id" ngModel />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-md-3">
+							<label for="patient_id"><b>Patient Id</b></label>
 							<input type="text" class="form-control" name="patient_id"
                             [(ngModel)]="PatientData.patient_id" ngModel />
 						</div>
 					</div>
- 
+					<label for="feedback"><b>Feedback</b></label>
+					<br>
   <textarea name="feedback" rows="10" cols="30" ngModel>The cat was playing in the garden.</textarea>
   <br><br>
-  <input type="submit">
+  <div class="Login">    
+    <input type="submit">
+</div>
 </form>
 
 </body>

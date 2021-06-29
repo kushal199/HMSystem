@@ -9,52 +9,46 @@ import { User } from 'src/app/user';
   styleUrls: ['./view-doc.component.css']
 })
 export class ViewDocComponent implements OnInit {
+
   users!: User[];
   u:User=new User();
   id: any;
+
   constructor(private service:NgserviceService,private router:Router) { 
     this.login_session();
   }
+
 
   ngOnInit(): void {
     this.getUsers();
   }
 
+
+  //getting all doctors as a list
   private getUsers(){
     this.service.fetchuserdetails().subscribe(data =>{
       this.users=data;
     }
-      // data=> console.log("response recieved"),
-      // error=> console.log("error recieved")
-
     );
 
   }
+
+  //prompting to update page for a particular id
   updateuser(id:number){
     console.log(id);
     this.router.navigate(['update_page' ,id]);
   }
 
-  onlogout(){
-    localStorage.removeItem('UserData');
-    this.router.navigate(['loginpage']);
-  }
+
+  //checking if the user is active or not
   login_session(){
     const userData=JSON.parse(localStorage.getItem('UserData')!);
-    //console.log(userData);
     if(!userData){
-      //return;
       this.router.navigate(['loginpage']);
-    }
-    let loggedinUser =new User();
-    loggedinUser=userData;
-    console.log(loggedinUser);
-    if(loggedinUser.doctor_id!=0){
-       this.u=loggedinUser;
-       //this.router.navigate(['dashboard_admin']);
     }
   }
 
+//to delete a particular doctor
   deleteuser(id:number){
     this.service.doctor_delete(id).subscribe(data=>{
          this.id=data;
