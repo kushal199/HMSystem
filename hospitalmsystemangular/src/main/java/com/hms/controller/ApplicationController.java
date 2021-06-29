@@ -1,4 +1,4 @@
-package com.hms.controller;
+/*package com.hms.controller;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -24,12 +24,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hms.customRepo.Repo;
-import com.hms.modal.Admin;
-import com.hms.modal.Appointment;
-import com.hms.modal.Department;
-import com.hms.modal.Patient;
-import com.hms.modal.User;
-import com.hms.repository.UserRepository;
+import com.hms.entity.Admin;
+import com.hms.entity.Appointment;
+import com.hms.entity.Department;
+import com.hms.entity.Patient;
+import com.hms.entity.Doctor;
+import com.hms.repository.DoctorRepository;
 import com.hms.services.UserService;
 
 @RestController
@@ -44,7 +44,7 @@ public class ApplicationController {
 		
 	            @RequestMapping(value="/save",method=RequestMethod.POST)
 				@CrossOrigin(origins="http://localhost:4200")
-				public int register(@RequestBody User user)
+				public int register(@RequestBody Doctor user)
 				{
 					System.out.println(user);
 					userService.saveUser(user);
@@ -72,14 +72,14 @@ public class ApplicationController {
 		
 		@RequestMapping (value="/login-user",method=RequestMethod.POST)
 		@CrossOrigin(origins="http://localhost:4200")
-		public User loginUser(@RequestBody User user) {
+		public Doctor loginUser(@RequestBody Doctor user) {
 			if(userService.findByUsernameAndPassword(user.getUsername(), user.getPassword())!=null) {
-				User user1=new User();
+				Doctor user1=new Doctor();
 				user1=userService.findByUsernameAndPassword(user.getUsername(), user.getPassword());
 				return user1;
 			}
 			
-			return new User();
+			return new Doctor();
 		}
 		
 		
@@ -88,8 +88,8 @@ public class ApplicationController {
 		
 		@RequestMapping(value="/new_user",method=RequestMethod.POST)
 		@CrossOrigin(origins="http://localhost:4200")
-		public User editUserhh(@RequestBody int id) {
-			User user =(userService.editUser(id)).get();
+		public Doctor editUserhh(@RequestBody int id) {
+			Doctor user =(userService.editUser(id)).get();
 			return user;
 		}
 		
@@ -99,7 +99,7 @@ public class ApplicationController {
 		
 		@RequestMapping(value="/update",method=RequestMethod.POST)
 		@CrossOrigin(origins="http://localhost:4200")
-		public int register1(@RequestBody User user)
+		public int register1(@RequestBody Doctor user)
 		{
 			userService.updateu(user.getUsername(),user.getFirstname(),user.getLastname(), user.getPassword(),user.getDoctor_id(),user.getDob(),user.getDepartment_id(),user.getAddress(),user.getEmail(),user.getActive());
 			
@@ -126,8 +126,8 @@ public class ApplicationController {
 		
 		@RequestMapping(value="/view_doc",method=RequestMethod.GET)
 		@CrossOrigin(origins="http://localhost:4200")
-		public List<User> viewdoc() {
-		    List<User> list = new ArrayList<User>();
+		public List<Doctor> viewdoc() {
+		    List<Doctor> list = new ArrayList<Doctor>();
 			list= userService.showAllUsers();
 			return list;
 	}
@@ -217,10 +217,10 @@ public class ApplicationController {
 		
 		@RequestMapping(value="/doctorfordep",method=RequestMethod.POST)
 		@CrossOrigin(origins="http://localhost:4200")
-		public List<User> viewdocfordep(@RequestBody int department_id) {
+		public List<Doctor> viewdocfordep(@RequestBody int department_id) {
 			//m.addAttribute("users", userService.showAllDocforDep(id));
 			//m.addAttribute("patient_id",idd);
-			List<User> list = new ArrayList<User>();
+			List<Doctor> list = new ArrayList<Doctor>();
 			list=userService.showAllDocforDep(department_id);
 			System.out.println(userService.showAllDocforDep(department_id));
 			return list;
@@ -317,5 +317,5 @@ public class ApplicationController {
 
 	
 
-	
+	*/
 

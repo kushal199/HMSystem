@@ -1,8 +1,10 @@
-package com.hms.modal;
+package com.hms.entity;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,44 +12,56 @@ import javax.persistence.Table;
 @Table(name="patient")
 public class Patient {
 	@Id
-	private int patient_id;
-	
+	@GeneratedValue
+	@Column(name="patient_id")
+	private int patientId;
+	@Column(name="username")
 	private String username;
+	@Column(name="password")
 	private String password;
+	@Column(name="name")
 	private String name;
+	@Column(name="address")
 	private String address;
+	@Column(name="dob")
 	private Date dob;
+	@Column(name="gender")
 	private String gender;
-	private int aadhar;
+	@Column(name="aadhaar")
+	private String aadhaar;
+	@Column(name="pin")
 	private int pin;
+	@Column(name="active")
 	private String active;
+	@Column(name="phone")
 	private String phone;
 	
 	public Patient(){
 		
 	}
-	
-	public Patient(int patient_id, String username, String password, String name, String address, Date dob,
-			String gender, int aadhar, int pin, String active,String phone) {
+
+	public Patient(int patientId, String username, String password, String name, String address, Date dob,
+			String gender, String aadhaar, int pin, String active, String phone) {
 		super();
-		this.patient_id = patient_id;
+		this.patientId = patientId;
 		this.username = username;
 		this.password = password;
 		this.name = name;
 		this.address = address;
 		this.dob = dob;
 		this.gender = gender;
-		this.aadhar = aadhar;
+		this.aadhaar = aadhaar;
 		this.pin = pin;
 		this.active = active;
-		this.phone=phone;
-	}
-	public int getPatient_id() {
-		return patient_id;
+		this.phone = phone;
 	}
 
-	public void setPatient_id(int patient_id) {
-		this.patient_id = patient_id;
+	public int getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
 	}
 
 	public String getUsername() {
@@ -98,12 +112,12 @@ public class Patient {
 		this.gender = gender;
 	}
 
-	public int getAadhar() {
-		return aadhar;
+	public String getAadhaar() {
+		return aadhaar;
 	}
 
-	public void setAadhar(int aadhar) {
-		this.aadhar = aadhar;
+	public void setAadhaar(String aadhaar) {
+		this.aadhaar = aadhaar;
 	}
 
 	public int getPin() {
@@ -121,6 +135,7 @@ public class Patient {
 	public void setActive(String active) {
 		this.active = active;
 	}
+
 	public String getPhone() {
 		return phone;
 	}
@@ -131,10 +146,11 @@ public class Patient {
 
 	@Override
 	public String toString() {
-		return "Patient [patient_id=" + patient_id + ", username=" + username + ", password=" + password + ", name="
-				+ name + ", address=" + address + ", dob=" + dob + ", gender=" + gender + ", aadhar=" + aadhar
-				+ ", pin=" + pin + ", active=" + active + "]";
+		return "Patient [patientId=" + patientId + ", username=" + username + ", password=" + password + ", name="
+				+ name + ", address=" + address + ", dob=" + dob + ", gender=" + gender + ", aadhaar=" + aadhaar
+				+ ", pin=" + pin + ", active=" + active + ", phone=" + phone + "]";
 	}
+
 	
 	
 

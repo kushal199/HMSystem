@@ -6,34 +6,35 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.hms.modal.Appointment;
+import com.hms.entity.Appointment;
 
-public interface AppointmentRepository  extends CrudRepository<Appointment, Integer>{
-	
-	@Query(value = "SELECT * FROM appointment where patient_id=:patient_id", nativeQuery = true)
-	public List<Appointment> getAppointment(@Param("patient_id") int patient_id);
-	
-	
-	@Query(value = "SELECT * FROM appointment where doctor_id=:doctor_id", nativeQuery = true)
-	public List<Appointment> getAppointmentdoc(@Param("doctor_id") int doctor_id);
-	
-	@Query(value = "SELECT * FROM appointment where doctor_id=:doctor_id and datetime > CURDATE()", nativeQuery = true)
-	public List<Appointment> getAppointmentdocUPCOMIN(@Param("doctor_id") int doctor_id);
-	
-	@Query(value = "SELECT * FROM appointment where doctor_id=:doctor_id and datetime < CURDATE()", nativeQuery = true)
-	public List<Appointment> getAppointmentdocPREV(@Param("doctor_id") int doctor_id);
-	
-	
+@Repository
+public interface AppointmentRepository extends CrudRepository<Appointment, Integer> {
+	@Query(value = "SELECT * FROM appointment where patient_id=:patientId", nativeQuery = true)
+	public List<Appointment> getAppointment(@Param("patientId") int patientId);
+
+	@Query(value = "SELECT * FROM appointment where doctor_id=:doctorId", nativeQuery = true)
+	public List<Appointment> getAppointmentdoc(@Param("doctorId") int doctorId);
+
+	@Query(value = "SELECT * FROM appointment where doctor_id=:doctorId and datetime > CURDATE()", nativeQuery = true)
+	public List<Appointment> getAppointmentdocUPCOMIN(@Param("doctorId") int doctorId);
+
+	@Query(value = "SELECT * FROM appointment where doctor_id=:doctorId and datetime < CURDATE()", nativeQuery = true)
+	public List<Appointment> getAppointmentdocPREV(@Param("doctorId") int doctorId);
+
 	@Modifying
-	@Query(value="update appointment set feedback=:feedback where appointment_id=:appointment_id" ,nativeQuery=true)
-	public void update(@Param("feedback") String feedback,@Param("appointment_id") int appointment_id);
-	
-	
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	@Query(value = "update appointment set feedback=:feedback where appointment_id=:appointmentId", nativeQuery = true)
+	public void update(@Param("feedback") String feedback, @Param("appointmentId") int appointmentId);
+
 	@Modifying
-	@Query(value="update appointment set prescription=:prescription where appointment_id=:appointment_id" ,nativeQuery=true)
-	public void updateprescription(@Param("prescription") String prescription,@Param("appointment_id") int appointment_id);
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	@Query(value = "update appointment set prescription=:prescription where appointment_id=:appointmentId", nativeQuery = true)
+	public void updateprescription(@Param("prescription") String prescription,
+			@Param("appointmentId") int appointmentId);
 
 }
-
-
