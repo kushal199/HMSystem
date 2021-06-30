@@ -1,11 +1,19 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-<h1>Welcome Patient!</h1>
-<div class="Login">
-<button class="btn btn-info" routerLink="/patient_login">Login</button>
-</div>
-<br>
-<!-- <a href="/patient_registration">Registration</a> -->
-<div class="Login">
-<button class="btn btn-success" routerLink="/patient_registration">Registration</button>
-</div>
+<h1>Welcome Patient</h1>
+<div class="card-deck">
+    <div class="card col-md-3" ></div>
+    <div class="card col-md-3" >
+      <img class="card-img-top" src="../../../assets/image/patient.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">you can register here</h5>
+        <a routerLink="/patient_registration" class="btn btn-primary">REGISTER HERE</a>
+      </div>
+    </div>
+    <div class="card col-md-3" >
+      <img class="card-img-top" src="../../../assets/image/patient.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">If you already register login here </h5>
+        <a routerLink="/patient_login" class="btn btn-primary">LOGIN</a>
+      </div>
+    </div>
+    <div class="card col-md-3" ></div>
+  </div>

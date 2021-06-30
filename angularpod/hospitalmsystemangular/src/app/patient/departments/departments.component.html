@@ -91,43 +91,32 @@ body{
 }
 	</style>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 <title>Patient Dashboard</title>
 </head>
 <body>
 <div class="container text-center" id="tasksDiv">
-				<!-- <button class="btn btn-info" (click)="onlogout()">logout</button> -->
-				<!-- <br> -->
-				<!-- <button class="btn btn-success" routerLink="/patient_edit">Update Your Details</button> -->
-				<!-- <h1>Welcome Mr.${patientm.name} </h1> -->
-				<h1>Welcome {{PatientData.name}}</h1>
-				
-				<button class="appointment" (click)="allappointments(PatientData.patient_id)">See Appointments</button>
-				<br/><br/>
-				<button  class="personal" routerLink="/edit_patient" >Edit Personal Details</button>
-				<hr>
-				<div class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr>
-								<th><b>Departments</b></th>
-						</tr>
-						</thead>
-						<tbody>
-							<!-- <c:forEach var="user" items="${departments }">
-								<tr>
-									<td><a href="/doctorfordep?id=${user.department_id }&idd=${patientm.patient_id}">${user.name}</a></td>
-									
-								</tr> -->
-							<!-- </c:forEach> -->
-                            <tr *ngFor ="let dept  of depts">
-                                <td><button (click)="docsfordept(dept.department_id)">{{dept.name}}</button></td>
-                            </tr>
-
-						</tbody>
-					</table>
-				</div>
-			</div>
+  <h1 style="margin-top: 3%;">Welcome {{PatientData.name}}</h1>
+  
+  <button class="appointment" (click)="allappointments(PatientData.patient_id)">See Appointments</button>
+  <br/><br/>
+  <button  class="personal" routerLink="/edit_patient" >Edit Personal Details</button>
+  <hr>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><b>Departments</b></th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor ="let dept  of depts">
+            <td><button (click)="docsfordept(dept.department_id)">{{dept.name}}</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 </body>
 </html>

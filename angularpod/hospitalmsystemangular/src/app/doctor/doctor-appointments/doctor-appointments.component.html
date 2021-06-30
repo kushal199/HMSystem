@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<title>Doctor Appointments</title>
-<style>
-	h1{
-		color: blue;
-	}
-	h3{
-		color: yellowgreen;
-	}
-</style>
-</head>
 <body>
-<div class="container text-center" id="tasksDiv">
+<div class="container-fluid text-center" id="tasksDiv">
 	<!-- <button class="btn btn-danger" (click)="onlogout_doctor()">Log Out</button> -->
 			<h1><b>Your Appointments</b></h1>
 				<!-- <h1>Welcome Mr.${patientm.name} </h1> -->
@@ -84,11 +69,7 @@
 									<td>{{user.appointment_id}}</td>
 									<td>{{user.patient_id}}</td>
 									<td>{{user.doctor_id}}</td>
-									<td>{{user.datetime}}</td>
-								
-									<!-- <!-- <td><button class="btn btn-danger" (click)="getfeedbackform(user.appointment_id)"><span
-											class="glyphicon glyphicon-pencil"></span>feedback</button></td>--!> -->
-									     
+									<td>{{user.datetime}}</td>    
                                     <td>{{user.feedback}}</td>        
                                     <td>{{user.description}}</td>
 									<!-- <td>{{user.prescription}}</td> -->
@@ -104,4 +85,3 @@
 			</div>
 
 </body>
-</html>

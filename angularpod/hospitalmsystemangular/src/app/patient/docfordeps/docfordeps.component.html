@@ -1,5 +1,4 @@
 <!-- <p>viewdetails works!</p> -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
     table.table-bordered{
     border:1px solid red;
@@ -15,9 +14,9 @@ th{
     text-align: center;
 }
 </style>
-<div class="container text-center" id="tasksDiv">
+<div class="container-fluid text-center" id="tasksDiv">
     <!-- <button class="btn btn-info" (click)="onlogout()">logout</button> -->
-    <h3><b>Doctors List</b></h3>
+    <h3 style="margin-top:3%;"><b>Doctors List</b></h3>
     <!-- <button class="btn btn-danger" >Log Out</button> -->
     <hr>
     <div class="table-responsive">
@@ -25,16 +24,16 @@ th{
             <thead>
                 <!-- welcome{{user.firstname}} -->
                 <tr>
-                    <th>Doctor_Id</th>
-                    <th>UserName</th>
-                    <th>First Name</th>
-                    <th>LastName</th>
+                    
+                    
+                    <th>Doctor's First Name</th>
+                    <th>Doctor's Last Name</th>
                     
                     <th>Date Of Birth</th>
-                    <th>Department_id</th>
+                    
                     <th>Address</th>
                     <th>EmailId</th>
-                    <th>Active</th>
+                    
                 
                     <th>Book Appointment</th>
                 </tr>
@@ -42,16 +41,16 @@ th{
             <tbody>
                
                     <tr *ngFor ="let user  of users">
-                        <td>{{user.doctor_id}}</td>
-                        <td>{{user.username}}</td>
+                        
+                       
                         <td>{{user.firstname}}</td>
                         <td>{{user.lastname}}</td>
                         
                         <td>{{user.dob}}</td>
-                        <td>{{user.department_id}}</td>
+                        
                         <td>{{user.address}}</td>
                         <td>{{user.email}}</td>
-                        <td>{{user.active}}</td>
+                        
                         
                         
                         
