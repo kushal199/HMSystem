@@ -29,10 +29,10 @@ public interface PatientRepository extends CrudRepository<Patient, Integer> {
 	
 	@Modifying
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
-	@Query(value = "update patient set username=:username, name=:name, pin=:pin, password=:password, dob=:dob, gender=:gender, address=:address , phone=:phone, active=:active, aadhaar=:aadhaar where patient_id=:patientId", nativeQuery = true)
+	@Query(value = "update patient set username=:username, name=:name, pin=:pin, password=:password, dob=:dob, gender=:gender, address=:address , phone=:phone, active=:active where patient_id=:patientId", nativeQuery = true)
 	public void update(@Param("username") String username, @Param("name") String name,
 			@Param("password") String password, @Param("patientId") int id, @Param("dob") Date dob,
-			@Param("gender") String gender, @Param("address") String address, @Param("aadhaar") String aadhaar,
+			@Param("gender") String gender, @Param("address") String address,
 			@Param("active") String active, @Param("pin") int pin, @Param("phone") String phone);
 
 }

@@ -28,8 +28,8 @@ public class Patient {
 	private Date dob;
 	@Column(name="gender")
 	private String gender;
-	@Column(name="aadhaar")
-	private String aadhaar;
+	@Column(name="aadhar")
+	private String aadhar;
 	@Column(name="pin")
 	private int pin;
 	@Column(name="active")
@@ -42,7 +42,7 @@ public class Patient {
 	}
 
 	public Patient(int patient_id, String username, String password, String name, String address, Date dob,
-			String gender, String aadhaar, int pin, String active, String phone) {
+			String gender, String aadhar, int pin, String active, String phone) {
 		super();
 		this.patient_id = patient_id;
 		this.username = username;
@@ -51,7 +51,7 @@ public class Patient {
 		this.address = address;
 		this.dob = dob;
 		this.gender = gender;
-		this.aadhaar = aadhaar;
+		this.aadhar = aadhar;
 		this.pin = pin;
 		this.active = active;
 		this.phone = phone;
@@ -113,12 +113,12 @@ public class Patient {
 		this.gender = gender;
 	}
 
-	public String getAadhaar() {
-		return aadhaar;
+	public String getAadhar() {
+		return aadhar;
 	}
 
-	public void setAadhaar(String aadhaar) {
-		this.aadhaar = aadhaar;
+	public void setAadhar(String aadhaar) {
+		this.aadhar = aadhaar;
 	}
 
 	public int getPin() {
@@ -148,7 +148,7 @@ public class Patient {
 	@Override
 	public String toString() {
 		return "Patient [patient_id=" + patient_id + ", username=" + username + ", password=" + password + ", name="
-				+ name + ", address=" + address + ", dob=" + dob + ", gender=" + gender + ", aadhaar=" + aadhaar
+				+ name + ", address=" + address + ", dob=" + dob + ", gender=" + gender + ", aadhar=" + aadhar
 				+ ", pin=" + pin + ", active=" + active + ", phone=" + phone + "]";
 	}
 

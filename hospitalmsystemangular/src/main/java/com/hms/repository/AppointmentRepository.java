@@ -28,13 +28,13 @@ public interface AppointmentRepository extends CrudRepository<Appointment, Integ
 
 	@Modifying
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
-	@Query(value = "update appointment set feedback=:feedback where appointment_id=:appointmentId", nativeQuery = true)
-	public void update(@Param("feedback") String feedback, @Param("appointmentId") int appointmentId);
+	@Query(value = "update appointment set feedback=:feedback where appointment_id=:appointment_id", nativeQuery = true)
+	public void update(@Param("feedback") String feedback, @Param("appointment_id") int appointment_id);
 
 	@Modifying
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
-	@Query(value = "update appointment set prescription=:prescription where appointment_id=:appointmentId", nativeQuery = true)
+	@Query(value = "update appointment set prescription=:prescription where appointment_id=:appointment_id", nativeQuery = true)
 	public void updateprescription(@Param("prescription") String prescription,
-			@Param("appointmentId") int appointmentId);
+			@Param("appointment_id") int appointment_id);
 
 }

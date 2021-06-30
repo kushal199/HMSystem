@@ -37,7 +37,7 @@ public class PatientService {
 	public void updatepatient(Patient patient) {
 		patientRepository.update(patient.getUsername(), patient.getName(), patient.getPassword(),
 				patient.getPatient_id(), patient.getDob(), patient.getGender(), patient.getAddress(),
-				patient.getAadhaar(), patient.getActive(), patient.getPin(), patient.getPhone());
+			patient.getActive(), patient.getPin(), patient.getPhone());
 	}
 
 	public List<Patient> showAllPatient() {

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int admin_id;
+	private int user_id;
 	@Column(name="username")
 	private String username;
 	@Column(name="password")
@@ -27,20 +27,20 @@ public class Admin {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Admin(int admin_id, String username, String password, String first_name, String last_name, String phone) {
+	public Admin(int user_id, String username, String password, String first_name, String last_name, String phone) {
 		super();
-		this.admin_id = admin_id;
+		this.user_id = user_id;
 		this.username = username;
 		this.password = password;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.phone = phone;
 	}
-	public int getAdmin_id() {
-		return admin_id;
+	public int getUser_id() {
+		return user_id;
 	}
-	public void setAdmin_id(int admin_id) {
-		this.admin_id = admin_id;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 	public String getUsername() {
 		return username;
@@ -74,7 +74,7 @@ public class Admin {
 	}
 	@Override
 	public String toString() {
-		return "Admin [admin_id=" + admin_id + ", username=" + username + ", password=" + password + ", first_name="
+		return "Admin [admin_id=" + user_id + ", username=" + username + ", password=" + password + ", first_name="
 				+ first_name + ", last_name=" + last_name + ", phone=" + phone + "]";
 	}
 

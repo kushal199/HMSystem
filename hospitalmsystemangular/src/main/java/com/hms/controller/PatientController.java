@@ -107,7 +107,7 @@ public class PatientController {
 	@PostMapping("/update_feedback")
 	public int feedbackPush(@RequestBody Appointment appointment) {
 
-		appointmentService.updateFeedback(appointment.getFeedback(), appointment.getPatient_id());
+		appointmentService.updateFeedback(appointment.getFeedback(), appointment.getAppointment_id());
 
 		return 1;
 	}
