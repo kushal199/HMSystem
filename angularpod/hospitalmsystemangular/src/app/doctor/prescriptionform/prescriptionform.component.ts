@@ -21,6 +21,7 @@ export class PrescriptionformComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //submit and call respective service
   submit(value:any){
     console.log(value);
     this.service.updateprescription(value).subscribe(data=>{
@@ -30,6 +31,7 @@ export class PrescriptionformComponent implements OnInit {
     });
   }
 
+  //getting user from localstorage
   getUserfromLocal()
   {
     this.DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);

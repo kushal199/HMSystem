@@ -18,13 +18,14 @@ export class AllAppointmentsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-   
+   //getting appointments for patient
  getAppointMentsForPatient(patient_id:any){
    this.service.fetchappointmentForPatientdetails(patient_id).subscribe(data=>{
     this.users=data;
     console.log(data);
    });
  }
+
  getfeedbackform(appointment_id:any){
   this.router.navigate(['feedbackform',appointment_id]);
  }

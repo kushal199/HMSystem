@@ -14,6 +14,8 @@ export class PatientRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
   submit(value:any){
     console.log(value);
     this.patient_registration(value);

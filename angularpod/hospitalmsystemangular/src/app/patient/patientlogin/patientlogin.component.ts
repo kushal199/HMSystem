@@ -19,30 +19,24 @@ export class PatientloginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //submit patient login and call respective method
 submit(value:any){
   console.log(value);
   this.login_patient(value);
 }
-
+//for logging in patient
 login_patient(value:any){
   this.service.login_patient(value).subscribe(data =>{
     this.ex=data;
-    
-    
     console.log(this.ex);
     if(this.ex.patient_id==0){
       this.loginFailed=true;
       timer(2000).subscribe((d)=>{
         this.loginFailed=false;
       })
-      //alert("invalid username and password");
-      //this.router.navigate(['patient_login']);
     }else{
       localStorage.setItem('PatientData',JSON.stringify(this.ex));
       console.log("logged in");
-      //this.login_session();
-      //const userData=JSON.parse(localStorage.getItem('UserData')!);
-      //console.log(userData);
      
        this.router.navigate(['departments']).then(()=>{
          window.location.reload();
@@ -50,6 +44,8 @@ login_patient(value:any){
     }
   });
 }
+
+//it should not prompt back if logged in
 guard(){
   const PatientData=JSON.parse(localStorage.getItem('PatientData')!);
   if(PatientData){

@@ -27,6 +27,7 @@ export class DocfordepsComponent implements OnInit {
        console.log(data)
     });
   }
+  
   bookappointment(doctor_id:any)
 {
    this.router.navigate(['appointment_form',doctor_id]);

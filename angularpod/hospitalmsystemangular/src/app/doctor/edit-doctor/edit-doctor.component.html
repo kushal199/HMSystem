@@ -4,9 +4,11 @@
 		<form class="form" #abcd="ngForm" (ngSubmit)="submit(abcd.value)">	
 			<div class="container">
 				<div class="form-group">
-					<label class="control-label col-md-3">Username</label>
+					<!-- <label class="control-label col-md-3">Username</label> -->
+					<input type="hidden" class="form-control" name="doctor_id"
+							[(ngModel)]="user.doctor_id" ngModel/>
 					<div class="col-md-12">
-						<input type="text" disabled class="form-control" name="username" placeholder="Enter User Name"
+						<input type="hidden"  class="form-control" name="username" placeholder="Enter User Name"
 						[(ngModel)]="user.username" ngModel #username="ngModel" required maxlength="11"/>
 						<div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
 							<div *ngIf="username.errors!.required">

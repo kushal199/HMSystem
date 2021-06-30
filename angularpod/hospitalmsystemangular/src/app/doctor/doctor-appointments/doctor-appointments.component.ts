@@ -22,6 +22,7 @@ export class DoctorAppointmentsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //take doc id as input and fetching upcoming appointments
   getAllUpcomingAppointments(doctor_id:any){
     console.log(doctor_id);
    this.service.fetchappointmentForUpcoming(doctor_id).subscribe(data=>{
@@ -30,6 +31,7 @@ export class DoctorAppointmentsComponent implements OnInit {
    });
   }
 
+  //getting all prev appointments
   getAllPrevAppointments(doctor_id:any){
     console.log(doctor_id);
    this.service.fetchappointmentForPrev(doctor_id).subscribe(data=>{
@@ -38,15 +40,19 @@ export class DoctorAppointmentsComponent implements OnInit {
    });
   }
 
+  //getting user from local storage
   getUserfromLocal()
   {
     this.DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);
     console.log(this.DoctorData);
 
 }
+
+
 getprescriptionForm(appointment_id:any){
   this.router.navigate(['prescriptionform',appointment_id]);
 }
+
 
 onlogout_doctor(){
   this.service.onlogout_doctor();

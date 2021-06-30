@@ -17,6 +17,8 @@ export class DoctorDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  //getting user from local
   getUserfromLocal()
   {
     this.DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);

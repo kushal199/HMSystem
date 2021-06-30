@@ -18,8 +18,8 @@ export class EditDoctorComponent implements OnInit {
   ngOnInit(): void {
   }
   
-
-  submit(value:any){
+//submit form and update doctor
+ submit(value:any){
  console.log(value);
  this.service.doctor_update(value).subscribe(data=>{
   this.ex=data;
@@ -29,6 +29,7 @@ export class EditDoctorComponent implements OnInit {
  });
   }
 
+  //get user details from localstorage
   getUserDetails(){
     this.user=JSON.parse(localStorage.getItem('DoctorData')!);
     console.log(this.user);

@@ -20,12 +20,13 @@ export class DoctorLoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+//submitting form and call for login
   submit(value:any){
     console.log(value);
     this.login_doctor(value);
   }
 
+  //for login
   login_doctor(value:any){
     this.service.login_doctor(value).subscribe(data=>{
      this.ex=data;
@@ -50,6 +51,8 @@ export class DoctorLoginComponent implements OnInit {
     }
     );
   }
+
+  //not to get into loginpage if already logged in
   guard(){
     const DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);
     if(DoctorData){
