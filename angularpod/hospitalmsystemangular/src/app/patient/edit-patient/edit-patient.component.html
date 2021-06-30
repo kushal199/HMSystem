@@ -12,7 +12,7 @@
 		<div class="form-group">
 			<label class="control-label col-md-3">Username</label>
 			<div class="col-md-12">
-				<input type="text" class="form-control" name="username"
+				<input type="text" disabled class="form-control" name="username"
 				[(ngModel)]="user.username" ngModel #username="ngModel" required maxlength="11"/>
 				<div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
 					<div *ngIf="username.errors!.required">

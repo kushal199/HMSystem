@@ -5,3 +5,5 @@ hospitalmsystemangular/.classpath
 hospitalmsystemangulartest/
 
 
+hospitalmsystemangular/target/classes/application.properties
+hospitalmsystemangular/.project

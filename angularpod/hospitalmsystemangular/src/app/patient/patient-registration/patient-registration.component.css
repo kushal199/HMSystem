@@ -3,9 +3,13 @@ h1{
     font-weight: bold;
     margin-top: 3%;
   }
+
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
-
+.registrationform{
+  width: 50vw;
+  margin-left: 23%;
+}
 /* input{
   width: 100%;
   padding: 12px 20px;

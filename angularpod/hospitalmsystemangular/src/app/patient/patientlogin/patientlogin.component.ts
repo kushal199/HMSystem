@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { timer } from 'rxjs';
 import { NgserviceService } from 'src/app/ngservice.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { NgserviceService } from 'src/app/ngservice.service';
 })
 export class PatientloginComponent implements OnInit {
   ex: any;
-
+  loginFailed:boolean=false;
   constructor(private service:NgserviceService,private router:Router) {
     localStorage.removeItem('UserData');
     localStorage.removeItem('DoctorData');
@@ -30,8 +31,12 @@ login_patient(value:any){
     
     console.log(this.ex);
     if(this.ex.patient_id==0){
-      alert("invalid username and password");
-      this.router.navigate(['patient_login']);
+      this.loginFailed=true;
+      timer(2000).subscribe((d)=>{
+        this.loginFailed=false;
+      })
+      //alert("invalid username and password");
+      //this.router.navigate(['patient_login']);
     }else{
       localStorage.setItem('PatientData',JSON.stringify(this.ex));
       console.log("logged in");

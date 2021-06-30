@@ -1,6 +1,7 @@
 import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { timer } from 'rxjs';
 import { NgserviceService } from 'src/app/ngservice.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { NgserviceService } from 'src/app/ngservice.service';
 })
 export class DoctorLoginComponent implements OnInit {
    ex:any;
+   loginFailed:boolean=false;
   constructor(private service:NgserviceService,private router:Router) {
     localStorage.removeItem('UserData');
     localStorage.removeItem('PatientData');
@@ -29,11 +31,15 @@ export class DoctorLoginComponent implements OnInit {
      this.ex=data;
      console.log(this.ex);
      if(this.ex.doctor_id==0){
-       alert("Username And Password did not match,Please try again");
-       this.router.navigate(['doctor_login'])
-       .then(() => {
-        window.location.reload();
-      });
+       //alert("Username And Password did not match,Please try again");
+       this.loginFailed=true;
+       timer(2000).subscribe((d)=>{
+         this.loginFailed=false;
+       })
+       //this.router.navigate(['doctor_login'])
+       //.then(() => {
+        //window.location.reload();
+      //});
      }else{
        localStorage.setItem('DoctorData',JSON.stringify(this.ex));
        console.log('logged in');

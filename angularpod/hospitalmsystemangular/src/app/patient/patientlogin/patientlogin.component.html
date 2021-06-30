@@ -1,6 +1,6 @@
 <body>
   <h2>Patient Login</h2>
-  <div class="container">
+  <div class="loginform">
   <form #abcd="ngForm" (ngSubmit)="submit(abcd.value)">
      <div class="container">
       <div class="form-group">
@@ -30,6 +30,9 @@
       </div>
   </div>
   </form>
+  <div *ngIf="loginFailed" class="alert alert-danger mt-5 text-center" role="alert">
+    Invalid username or password. Try Again.
+  </div>
   </div>
   </body>
   

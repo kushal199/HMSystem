@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { timer } from 'rxjs';
 import { NgserviceService } from 'src/app/ngservice.service';
 import { User } from 'src/app/user';
 
@@ -10,7 +11,7 @@ import { User } from 'src/app/user';
 })
 export class LoginpageComponent implements OnInit {
   ex:any;
-
+  loginFailed:boolean=false;
   constructor(private service:NgserviceService,private router:Router) {
 
     //removing other sessions if available
@@ -37,7 +38,11 @@ export class LoginpageComponent implements OnInit {
       this.ex=data;
       console.log(this.ex);
       if(this.ex.user_id==0){
-        alert("invalid username and password");
+        //alert("invalid username and password");
+        this.loginFailed=true;
+        timer(2000).subscribe((d)=>{
+          this.loginFailed=false;
+        })
         this.router.navigate(['loginpage']);
       }else{
         localStorage.setItem('UserData',JSON.stringify(this.ex));
