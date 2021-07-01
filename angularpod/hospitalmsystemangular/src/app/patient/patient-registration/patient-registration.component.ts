@@ -15,19 +15,19 @@ export class PatientRegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  //submitting registration form and call respecting method and after registering route to login page
   submit(value:any){
     console.log(value);
     this.patient_registration(value);
     alert("successfully registered");
     this.router.navigate(['patient_login'])
-    
   }
 
+  //to save patient calling service method to register
   patient_registration(value:any){
     this.service.register_patient(value).subscribe(data=>{
-      this.ex=data;
-      console.log(this.ex);
+    this.ex=data;
+    console.log(this.ex);
     })
   }
 

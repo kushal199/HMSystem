@@ -20,41 +20,38 @@ export class DepartmentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //getting all departments
   getDepartment(){
     this.service.fetchdeptdetails().subscribe(data =>{
-       this.depts=data;
-       console.log(this.depts);
+    this.depts=data;
+    console.log(this.depts);
     });
   }
+
+ //getting user from localStorage
   getUserfromLocal()
   {
     this.PatientData=JSON.parse(localStorage.getItem('PatientData')!);
     console.log(this.PatientData);
+  }
 
-}
+ //redirecting to other doctors page of specific department
 docsfordept(department_id:any){
     console.log("done");
     this.router.navigate(['docsfordepts',department_id])
 }
 
+//redirecting to all appointments taken by patient
 allappointments(patient_id:any){
 this.router.navigate(['allappointments',patient_id]);
 }
 
-// login_session(){
-//   const PatientData=JSON.parse(localStorage.getItem('PatientData')!);
-//   //console.log(userData);
-//   if(!PatientData){
-//     //return;
-//     this.router.navigate(['patient_login']);
-//   }
-// }
+
 onlogout(){
-  // localStorage.removeItem('PatientData');
-  // this.router.navigate(['patient_login']);
   this.service.onlogout();
 }
 
+//redirecting to edit page of patient
 edit_patient(){
   this.router.navigate(['edit_patient']);
 }

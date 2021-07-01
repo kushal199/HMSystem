@@ -8,8 +8,9 @@ import * as $ from 'jquery';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+  //boolean to check login or logout
   isloggedin=false;
+  
   constructor(private router:Router) { 
     this.loginlogout();
   }
@@ -26,9 +27,11 @@ export class HeaderComponent implements OnInit {
       });
   });
   }
-
+ 
   public isMenuCollapsed = true;
+  
 
+  //for implementing login logout button appearance according to session 
   loginlogout(){
     const DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);
     const UserData=JSON.parse(localStorage.getItem('UserData')!);
@@ -39,27 +42,22 @@ export class HeaderComponent implements OnInit {
     }
     else if(!DoctorData){
       this.isloggedin=false;
-     
-
       if(UserData){
         this.isloggedin=true;
-      
       }
       else if(!UserData){
-        this.isloggedin=false;
-        
+        this.isloggedin=false; 
         if(PatientData){
-          this.isloggedin=true;
-          
+          this.isloggedin=true;  
         }
         else if(!PatientData){
-          this.isloggedin=false;
-          
+          this.isloggedin=false; 
         }
       }
     }
   }
 
+  //implementic logging out session removing storage data
   onlogout(){
     const DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);
     const UserData=JSON.parse(localStorage.getItem('UserData')!);

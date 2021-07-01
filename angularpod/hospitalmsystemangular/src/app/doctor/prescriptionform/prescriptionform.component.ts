@@ -11,8 +11,9 @@ export class PrescriptionformComponent implements OnInit {
    appointment_id:any;
    DoctorData:any;
    ex:any;
+
   constructor(private service:NgserviceService,private router:Router,private route:ActivatedRoute) {
-    this.service.login_session_doctor();
+   this.service.login_session_doctor();
    this.appointment_id=Number(this.route.snapshot.params['appointment_id']);
    this.getUserfromLocal();
    
@@ -21,7 +22,7 @@ export class PrescriptionformComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //submit and call respective service
+  //submit and call respective service updateprescription
   submit(value:any){
     console.log(value);
     this.service.updateprescription(value).subscribe(data=>{
@@ -36,8 +37,9 @@ export class PrescriptionformComponent implements OnInit {
   {
     this.DoctorData=JSON.parse(localStorage.getItem('DoctorData')!);
     console.log(this.DoctorData);
+  }
 
-}
+
 onlogout_doctor(){
   this.service.onlogout_doctor();
 }

@@ -10,18 +10,19 @@ import { NgserviceService } from 'src/app/ngservice.service';
 export class EditDoctorComponent implements OnInit {
  user:any;
  ex:any;
+
   constructor(private service:NgserviceService,private router:Router) {
-    service.login_session_doctor();
+   service.login_session_doctor();
    this.getUserDetails();
    }
 
   ngOnInit(): void {
   }
   
-//submit form and update doctor
+//submit form and update doctor ..
  submit(value:any){
- console.log(value);
- this.service.doctor_update(value).subscribe(data=>{
+  console.log(value);
+  this.service.doctor_update(value).subscribe(data=>{
   this.ex=data;
   console.log(this.ex);
   alert("updated...please logout and login again to see updated result");

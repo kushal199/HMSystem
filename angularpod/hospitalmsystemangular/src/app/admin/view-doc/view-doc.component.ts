@@ -9,7 +9,7 @@ import { User } from 'src/app/user';
   styleUrls: ['./view-doc.component.css']
 })
 export class ViewDocComponent implements OnInit {
-
+  //creating necessary objects
   users!: User[];
   u:User=new User();
   id: any;

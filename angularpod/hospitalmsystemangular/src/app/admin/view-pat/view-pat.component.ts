@@ -9,6 +9,7 @@ import { NgserviceService } from 'src/app/ngservice.service';
 })
 export class ViewPatComponent implements OnInit {
   users!: any[];
+
   constructor(private router:Router,private service:NgserviceService) {
     this.login_session();
     this.getPatient();
@@ -18,7 +19,7 @@ export class ViewPatComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  //getting patient list calling service
   getPatient(){
     this.service.fetchPatientdetails().subscribe(data=>{
     this.users=data;
@@ -31,20 +32,12 @@ export class ViewPatComponent implements OnInit {
     this.router.navigate(['loginpage']);
   }
 
+  //session checking if available or not
   login_session(){
     const userData=JSON.parse(localStorage.getItem('UserData')!);
-    //console.log(userData);
     if(!userData){
-      //return;
       this.router.navigate(['loginpage']);
     }
-    // let loggedinUser =new User();
-    // loggedinUser=userData;
-    // console.log(loggedinUser);
-    // if(loggedinUser.doctor_id!=0){
-    //    this.u=loggedinUser;
-    //    //this.router.navigate(['dashboard_admin']);
-    // }
   }
 
 }

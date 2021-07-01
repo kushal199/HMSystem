@@ -14,7 +14,7 @@ export class AppointmentFormComponent implements OnInit {
   p: any;
 
   constructor(private service:NgserviceService,private router:Router,private route:ActivatedRoute) { 
-    this.service.login_session();
+   this.service.login_session();
    this.doctor_id= Number(this.route.snapshot.params['doctor_id']);
    console.log(this.doctor_id);
    this.getUserfromLocal();
@@ -22,28 +22,31 @@ export class AppointmentFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  submit(value:any){
-   console.log(value);
-   //this.p=JSON.parse(localStorage.getItem('PatientData')!);
-   //console.log(this.p.patient_id);
-   console.log(this.doctor_id);
-  this.book(value);
-   
 
+  //submitting form with form object and call respective function
+  submit(value:any){
+  console.log(value);
+  console.log(this.doctor_id);
+  this.book(value);
   }
 
+  //function for subscribing function and booking appointment 
   book(value:any){
     this.service.book_appointment(value).subscribe(data =>{
-      this.ex=data;
-      console.log(this.ex);
-      this.router.navigate(['departments']);
+    this.ex=data;
+    console.log(this.ex);
+    this.router.navigate(['departments']);
      });
   }
+
+  //getting users from localStorage
   getUserfromLocal()
   {
     this.PatientData=JSON.parse(localStorage.getItem('PatientData')!);
     console.log(this.PatientData);
   }
+
+
   onlogout(){
     this.service.onlogout();
   }

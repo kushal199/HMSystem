@@ -13,25 +13,27 @@ export class DocfordepsComponent implements OnInit {
   constructor(private router :Router,private service:NgserviceService,private route :ActivatedRoute) {
      this.service.login_session();
      this.id=Number(this.route.snapshot.params['department_id']);
-    this.getDocsforDeps(this.id);
-
+     this.getDocsforDeps(this.id);
    }
 
   ngOnInit(): void {
   }
 
-
+  //getting doctors for specific department
   getDocsforDeps(department_id:any){
     this.service.fetchdeptdocdetails(department_id).subscribe(data=>{
-       this.users=data;
-       console.log(data)
+    this.users=data;
+    console.log(data)
     });
   }
   
+//redirecting to book appointment page
   bookappointment(doctor_id:any)
 {
    this.router.navigate(['appointment_form',doctor_id]);
 }
+
+
 onlogout(){
    this.service.onlogout();
 }
