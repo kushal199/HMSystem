@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3%;
+}
+.card-body{
+  text-align: center;
+}
+.card-deck{
+  padding-top: 5%;
+  align-items: center;
+}

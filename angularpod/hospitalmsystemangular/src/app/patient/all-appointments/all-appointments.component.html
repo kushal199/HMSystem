@@ -1,0 +1,46 @@
+
+<body>
+<div class="container-fluid text-center" id="tasksDiv">
+	<!-- <button class="btn btn-info" (click)="onlogout()">logout</button> -->
+			<h3 style="margin-top: 3%;">All Appointments for You</h3>
+				<!-- <h1>Welcome Mr.${patientm.name} </h1> -->
+				
+				<div class="table-responsive" style="margin-top: 2%;">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Appointment Id</th>
+								<th>patientId</th>
+								<th>doctorId</th>
+								<th>Datetime</th>
+								<th>Feedback</th>
+								<th>Description</th>
+								<th>Prescription</th>
+								</tr>
+						</thead>
+						<tbody>
+							<!-- <c:forEach var="user" items="${users }"> -->
+								<tr *ngFor="let user of users">
+									<td>{{user.appointmentId}}</td>
+									<td>{{user.patientId}}</td>
+									<td>{{user.doctorId}}</td>
+									<td>{{user.datetime}}</td>
+								
+									<td><button class="btn btn-danger" (click)="getfeedbackform(user.appointmentId)"><span
+											class="glyphicon glyphicon-pencil"></span>Feedback</button></td>
+									<td>
+                                        {{user.description}}</td>
+									<td>{{user.prescription}}</td>
+									
+									
+									
+						
+			
+								</tr>
+							<!-- </c:forEach> -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+</body>

@@ -1,0 +1,87 @@
+<body>
+<div class="container-fluid text-center" id="tasksDiv">
+	<!-- <button class="btn btn-danger" (click)="onlogout_doctor()">Log Out</button> -->
+			<h1><b>Your Appointments</b></h1>
+				<!-- <h1>Welcome Mr.${patientm.name} </h1> -->
+				<hr>
+				<h3>Upcoming Appointments</h3>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Appointment Id</th>
+								<th>patientId</th>
+								<th>doctorId</th>
+								<th>Datetime</th>
+								<th>Feedback</th>
+								<th>Description</th>
+								<th>Given Prescription</th>
+								<th>Prescription</th>
+
+								
+							</tr>
+						</thead>
+						<tbody>
+							<!-- <c:forEach var="user" items="${users }"> -->
+								<tr *ngFor="let user of users">
+									<td>{{user.appointmentId}}</td>
+									<td>{{user.patientId}}</td>
+									<td>{{user.doctorId}}</td>
+									<td>{{user.datetime}}</td>
+								
+									<!-- <!-- <td><button class="btn btn-danger" (click)="getfeedbackform(user.appointmentId)"><span
+											class="glyphicon glyphicon-pencil"></span>feedback</button></td>--!> -->
+									     
+                                    <td>{{user.feedback}}</td>        
+                                    <td>{{user.description}}</td>
+									<!-- <td>{{user.prescription}}</td> -->
+									<td>{{user.prescription}}</td>
+                                    <td><button class="btn btn-danger" (click)="getprescriptionForm(user.appointmentId)"><span
+                                        class="glyphicon glyphicon-pencil"></span>Prescribe</button></td>
+								
+								</tr>
+							<!-- </c:forEach> -->
+						</tbody>
+					</table>
+				</div>
+				<br>
+				<br>
+				<h3>Previous Appointments</h3>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Appointment Id</th>
+								<th>patientId</th>
+								<th>doctorId</th>
+								<th>Datetime</th>
+								<th>Feedback</th>
+								<th>Description</th>
+								<th>Given Prescription</th>
+								<th>Prescription</th>
+
+								
+							</tr>
+						</thead>
+						<tbody>
+							<!-- <c:forEach var="user" items="${users }"> -->
+								<tr *ngFor="let user of prevapp">
+									<td>{{user.appointmentId}}</td>
+									<td>{{user.patientId}}</td>
+									<td>{{user.doctorId}}</td>
+									<td>{{user.datetime}}</td>    
+                                    <td>{{user.feedback}}</td>        
+                                    <td>{{user.description}}</td>
+									<!-- <td>{{user.prescription}}</td> -->
+									<td>{{user.prescription}}</td>
+                                    <td><button class="btn btn-danger" (click)="getprescriptionForm(user.appointmentId)"><span
+                                        class="glyphicon glyphicon-pencil"></span>Prescribe</button></td>
+								
+								</tr>
+							<!-- </c:forEach> -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+</body>

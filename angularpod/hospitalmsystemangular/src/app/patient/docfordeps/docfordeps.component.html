@@ -1,0 +1,67 @@
+<!-- <p>viewdetails works!</p> -->
+<style>
+    table.table-bordered{
+    border:1px solid red;
+    margin-top:20px;
+  }
+  table.table-bordered > thead > tr > th{
+    border:1px solid red;
+}
+table.table-bordered > tbody > tr > td{
+    border:1px solid red;
+}
+th{
+    text-align: center;
+}
+</style>
+<div class="container-fluid text-center" id="tasksDiv">
+    <!-- <button class="btn btn-info" (click)="onlogout()">logout</button> -->
+    <h3 style="margin-top:3%;"><b>Doctors List</b></h3>
+    <!-- <button class="btn btn-danger" >Log Out</button> -->
+    <hr>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <!-- welcome{{user.firstName}} -->
+                <tr>
+                    
+                    
+                    <th>Doctor's First Name</th>
+                    <th>Doctor's Last Name</th>
+                    
+                    <th>Date Of Birth</th>
+                    
+                    <th>Address</th>
+                    <th>EmailId</th>
+                    
+                
+                    <th>Book Appointment</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                    <tr *ngFor ="let user  of users">
+                        
+                       
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        
+                        <td>{{user.dob}}</td>
+                        
+                        <td>{{user.address}}</td>
+                        <td>{{user.email}}</td>
+                        
+                        
+                        
+                        
+                       
+                        <td><button class="btn btn-success" (click)="bookappointment(user.doctorId)"><span
+                                class="glyphicon glyphicon-pencil"></span>Book Appointment</button></td>
+                    <!-- <button (click) = "updateEmployee()" class = "btn btn-info"> Update</button> -->
+                    <form action=""></form>
+                    </tr>
+               
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+h1{
+color:blue;
+}
+div{
+    display: flex;
+    justify-content: space-around;
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Welcome to HMS</h1>
+<div>
+<button class="btn btn-danger" routerLink="/loginpage">Admin Panel</button>
+<button class="btn btn-info" routerLink="/patient_landing"><b>Patient Panel</b></button>
+<button class="btn btn-info" routerLink="/doctor_login">Doctor Panel</button>
+</div>
+</body>
+</html> -->
+<body style="overflow-x: hidden;">
+<ngb-carousel >
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="car" src="../../../assets/image/11.jpg" alt="Random first slide" >
+      </div>
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="car" src="../../../assets/image/12.jpg" alt="Random second slide" >
+      </div>
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="car" src="../../../assets/image/13.jpg" alt="Random second slide" >
+        </div>
+        <div class="carousel-caption">
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </ng-template>
+</ngb-carousel>
+
+<br>
+
+<div class="card-deck">
+  <div class="card col-md-4" >
+    <img class="card-img-top" src="../../../assets/image/admin.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">ADMIN</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a routerLink="/loginpage" class="btn btn-primary">Dive in</a>
+    </div>
+  </div>
+  <div class="card col-md-4" >
+    <img class="card-img-top" src="../../../assets/image/doctor.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">DOCTOR</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a routerLink="/doctor_login" class="btn btn-primary">Dive in</a>
+    </div>
+  </div>
+  <div class="card col-md-4" >
+    <img class="card-img-top" src="../../../assets/image/patient.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">PATIENT</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a routerLink="/patient_landing" class="btn btn-primary">Dive in</a>
+    </div>
+  </div>
+</div>
+</body>

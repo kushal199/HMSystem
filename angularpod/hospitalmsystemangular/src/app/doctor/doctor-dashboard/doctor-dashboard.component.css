@@ -1,0 +1,28 @@
+h1{
+    color:blue;
+    text-align: center;
+    }
+    body {font-family: Arial, Helvetica, sans-serif;
+    height:850px;}
+    /* div{
+        display: flex;
+        justify-content: space-around;
+    } */
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        width: 50em;
+        
+    }
+      h5{
+        text-align: center;
+        font-weight: bold;
+    }
+    button{
+        /*Change the width as much as you like, but make sure 
+        margin-left and margin-right + width = 100%*/
+        width:30%;
+        height: 50%;
+        margin-left:35%;
+        margin-right:30%;
+    }

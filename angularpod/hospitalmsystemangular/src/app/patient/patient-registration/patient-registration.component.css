@@ -1,0 +1,49 @@
+h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3%;
+  }
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+.registrationform{
+  width: 50vw;
+  margin-left: 23%;
+}
+/* input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+} */
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.container {
+  padding: 10px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+}
+h2{
+	text-align: center;
+    padding: 50px;
+}
+

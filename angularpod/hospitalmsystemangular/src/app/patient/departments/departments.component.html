@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		th{
+		   height: 40px;
+		   background-color: lightgreen;
+		   
+		   text-align: center;
+		}
+		thead{
+			border:2px solid black;
+			font-size: 40px;
+		}
+		tr{
+			border:1px solid black;
+		}
+		div.table-responsive {
+  
+  border:1px solid black;
+  background-color:white;
+}
+button {
+  background: #34d3d9;
+  background-image: -webkit-linear-gradient(top, #34d3d9, #2386c4);
+  background-image: -moz-linear-gradient(top, #34d3d9, #2386c4);
+  background-image: -ms-linear-gradient(top, #34d3d9, #2386c4);
+  background-image: -o-linear-gradient(top, #34d3d9, #2386c4);
+  background-image: linear-gradient(to bottom, #34d3d9, #2386c4);
+  -webkit-border-radius: 34;
+  -moz-border-radius: 34;
+  border-radius: 34px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  border: solid #68e85a 4px;
+  text-decoration: none;
+}
+button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.appointment{
+	position: relative;
+	right: 450px;
+	background: #bfbf2e;
+  background-image: -webkit-linear-gradient(top, #bfbf2e, #dfe67e);
+  background-image: -moz-linear-gradient(top, #bfbf2e, #dfe67e);
+  background-image: -ms-linear-gradient(top, #bfbf2e, #dfe67e);
+  background-image: -o-linear-gradient(top, #bfbf2e, #dfe67e);
+  background-image: linear-gradient(to bottom, #bfbf2e, #dfe67e);
+  -webkit-border-radius: 34;
+  -moz-border-radius: 34;
+  border-radius: 34px;
+  font-family: Arial;
+  color: #103a0b;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  border: solid #152113 4px;
+  text-decoration: none;
+}
+.personal{
+	position: relative;
+	bottom: 68px;
+	left: 450px;
+	background: #bfbf2e;
+  background-image: -webkit-linear-gradient(top, #bfbf2e, #dfe67e);
+  background-image: -moz-linear-gradient(top, #bfbf2e, #dfe67e);
+  background-image: -ms-linear-gradient(top, #bfbf2e, #dfe67e);
+  background-image: -o-linear-gradient(top, #bfbf2e, #dfe67e);
+  background-image: linear-gradient(to bottom, #bfbf2e, #dfe67e);
+  -webkit-border-radius: 34;
+  -moz-border-radius: 34;
+  border-radius: 34px;
+  font-family: Arial;
+  color: #103a0b;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  border: solid #152113 4px;
+  text-decoration: none;
+}
+
+body{
+	height: 1080px;
+}
+	</style>
+<meta charset="ISO-8859-1">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+<title>Patient Dashboard</title>
+</head>
+<body>
+<div class="container text-center" id="tasksDiv">
+  <h1 style="margin-top: 3%;">Welcome {{PatientData.name}}</h1>
+  
+  <button class="appointment" (click)="allappointments(PatientData.patientId)">See Appointments</button>
+  <br/><br/>
+  <button  class="personal" routerLink="/edit_patient" >Edit Personal Details</button>
+  <hr>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><b>Departments</b></th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor ="let dept  of depts">
+            <td><button (click)="docsfordept(dept.departmentId)">{{dept.name}}</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
