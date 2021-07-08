@@ -10,8 +10,8 @@
 						<thead>
 							<tr>
 								<th>Appointment Id</th>
-								<th>patientId</th>
-								<th>doctorId</th>
+								<!-- <th>patientId</th>
+								<th>doctorId</th> -->
 								<th>Datetime</th>
 								<th>Feedback</th>
 								<th>Description</th>
@@ -19,11 +19,11 @@
 								</tr>
 						</thead>
 						<tbody>
-							<!-- <c:forEach var="user" items="${users }"> -->
+							
 								<tr *ngFor="let user of users">
 									<td>{{user.appointmentId}}</td>
-									<td>{{user.patientId}}</td>
-									<td>{{user.doctorId}}</td>
+									<!-- <td>{{user.patientId}}</td>
+									<td>{{user.doctorId}}</td> -->
 									<td>{{user.datetime}}</td>
 								
 									<td><button class="btn btn-danger" (click)="getfeedbackform(user.appointmentId)"><span
@@ -32,12 +32,8 @@
                                         {{user.description}}</td>
 									<td>{{user.prescription}}</td>
 									
-									
-									
-						
-			
 								</tr>
-							<!-- </c:forEach> -->
+							
 						</tbody>
 					</table>
 				</div>

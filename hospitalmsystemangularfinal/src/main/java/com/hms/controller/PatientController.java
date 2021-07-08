@@ -75,8 +75,7 @@ public class PatientController {
 
 	@PostMapping("/doctorfordep")
 	public List<Doctor> viewdocfordep(@RequestBody int departmentId) {
-		// m.addAttribute("users", userService.showAllDocforDep(id));
-		// m.addAttribute("patient_id",idd);
+		
 		List<Doctor> list = new ArrayList<Doctor>();
 		list = doctorService.showAllDocforDep(departmentId);
 		System.out.println(doctorService.showAllDocforDep(departmentId));
@@ -113,9 +112,14 @@ public class PatientController {
 	}
 	//uniqueness check
 	@PostMapping("/patient/check_username")
-	public String checkUniqueUsername(@RequestBody String username) {
+	public int checkUniqueUsername(@RequestBody String username) {
 		System.out.println(username);
-		return patientService.checkUniqueUsername(username);
+		//return patientService.checkUniqueUsername(username);
+	     if(patientService.checkUniqueUsername(username)=="yes") {
+	    	 return 1;
+	     }else {
+	    	 return 0;
+	     }
 		
 		}
 

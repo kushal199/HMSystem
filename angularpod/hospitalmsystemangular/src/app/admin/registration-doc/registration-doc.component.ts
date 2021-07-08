@@ -12,6 +12,7 @@ export class RegistrationDocComponent implements OnInit {
   ex: any;
   //creating a object
   u:User=new User();
+  usernameChecker: any;
 
   constructor(private service:NgserviceService,private router:Router) {
     this.login_session();
@@ -37,6 +38,25 @@ export class RegistrationDocComponent implements OnInit {
       this.ex=data;
       console.log(this.ex);
     });
+  }
+
+  checkUsername(event:any){
+    console.log(event.target.value);
+    const c=event.target.value;
+    this.service.checkPatientUsername(c).subscribe(data1=>{
+      this.service.checkDoctorUsername(c).subscribe(data2=>{
+        if(data1 ==1 && data2 ==1){
+          this.usernameChecker=false;
+        }else{
+          this.usernameChecker=true;
+        }
+  
+      })
+     console.log(this.usernameChecker);
+
+    });
+   
+    
   }
 
 

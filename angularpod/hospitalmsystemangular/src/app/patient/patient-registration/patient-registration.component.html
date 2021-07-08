@@ -6,6 +6,9 @@
 				<label class="control-label col-md-3">Username</label>
 				<div class="col-md-12">
 					<input path="username" type="text" class="form-control" name="username" placeholder="Enter Email Id as Username" value="" ngModel #username="ngModel" required maxlength="11" (focus)="checkUsername($event)"/>
+					<div *ngIf="usernameChecker"  class="alert alert-danger">
+						UserId is already Taken
+					</div>
 					<div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
 						<div *ngIf="username.errors!.required">
 							UserName is required.
@@ -13,6 +16,7 @@
 						<div *ngIf="username.errors!.maxlength">
 							UserName cannot be more than 11 characters long.
 						</div>
+						
 					</div>
 				</div>
 			</div>

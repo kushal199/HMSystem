@@ -7,8 +7,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class NgserviceService {
-  private baseURL = 'http://localhost:8080/save_appointment';
+  // private baseURL = 'http://localhost:8080/';
   constructor(private _http:HttpClient,private router:Router) { }
+  
 //admin part service
   fetchuserdetails():Observable<any>{
     return this._http.get<any>("http://localhost:8080/view_doc");
@@ -96,7 +97,9 @@ export class NgserviceService {
   }
 
  
-
+  checkDoctorUsername(username:any):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/doctor/check_username",username);
+  }
 
 
   updateprescription(appointment:object):Observable<any>{

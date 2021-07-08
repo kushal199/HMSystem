@@ -2,6 +2,7 @@ package com.hms.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.hms.entity.Appointment;
 
 @Repository
-public interface AppointmentRepository extends CrudRepository<Appointment, Integer> {
+public interface AppointmentRepository extends JpaRepository<Appointment, Integer> {
 	@Query(value = "SELECT * FROM appointment where patient_id=:patientId", nativeQuery = true)
 	public List<Appointment> getAppointment(@Param("patientId") int patientId);
 

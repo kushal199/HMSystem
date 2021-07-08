@@ -66,4 +66,17 @@ public class DoctorController {
 		doctorService.updatePrescription(appointment.getPrescription(), appointment.getAppointmentId());
 		return 1;
 	}
+	
+	//uniqueness check
+		@PostMapping("/doctor/check_username")
+		public int checkUniqueUsername(@RequestBody String username) {
+			System.out.println(username);
+			//return patientService.checkUniqueUsername(username);
+		     if(doctorService.checkUniqueUsername(username)=="yes") {
+		    	 return 1;
+		     }else {
+		    	 return 0;
+		     }
+			
+			}
 }

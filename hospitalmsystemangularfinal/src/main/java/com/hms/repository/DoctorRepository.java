@@ -1,6 +1,7 @@
 package com.hms.repository;
 
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -15,14 +16,13 @@ import java.sql.Date;
 import java.util.List;
 
 @Repository
-public interface DoctorRepository extends CrudRepository<Doctor,Integer> {
+public interface DoctorRepository extends JpaRepository<Doctor,Integer> {
 	
 	@Query(value = "SELECT * FROM doctor", nativeQuery = true)
 	public List<Doctor> getUser();
 	
 	public Doctor findByUsernameAndPassword(String username, String password);
 
-	//public User findOne(int id);
 	
 	@Query(value = "SELECT COUNT(doctor_id) FROM doctor WHERE username=:username", nativeQuery = true)
 	public int getDoctorCount(@Param("username") String username);
